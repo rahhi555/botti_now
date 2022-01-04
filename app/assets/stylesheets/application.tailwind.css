@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .btn-primary {
+      background-color: #E66EB2;
+      color: #003B4A;
+      font-weight: bold;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border: #E66EB2 solid 3px;
+      border-radius: 9999px;
+    }
+
+    .btn-primary:hover {
+        background-color: #af4888;
+        border-color: #af4888;
+    }
+}
