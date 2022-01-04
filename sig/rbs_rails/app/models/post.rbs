@@ -1,0 +1,126 @@
+class Post < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[Post, ActiveRecord_Relation, Integer]
+
+  attr_accessor id(): Integer
+  def id_changed?: () -> bool
+  def id_change: () -> [ Integer?, Integer? ]
+  def id_will_change!: () -> void
+  def id_was: () -> Integer?
+  def id_previously_changed?: () -> bool
+  def id_previous_change: () -> Array[Integer?]?
+  def id_previously_was: () -> Integer?
+  def id_before_last_save: () -> Integer?
+  def id_change_to_be_saved: () -> Array[Integer?]?
+  def id_in_database: () -> Integer?
+  def saved_change_to_id: () -> Array[Integer?]?
+  def saved_change_to_id?: () -> bool
+  def will_save_change_to_id?: () -> bool
+  def restore_id!: () -> void
+  def clear_id_change: () -> void
+
+  attr_accessor message(): String
+  def message_changed?: () -> bool
+  def message_change: () -> [ String?, String? ]
+  def message_will_change!: () -> void
+  def message_was: () -> String?
+  def message_previously_changed?: () -> bool
+  def message_previous_change: () -> Array[String?]?
+  def message_previously_was: () -> String?
+  def message_before_last_save: () -> String?
+  def message_change_to_be_saved: () -> Array[String?]?
+  def message_in_database: () -> String?
+  def saved_change_to_message: () -> Array[String?]?
+  def saved_change_to_message?: () -> bool
+  def will_save_change_to_message?: () -> bool
+  def restore_message!: () -> void
+  def clear_message_change: () -> void
+
+  attr_accessor like(): Integer?
+  def like_changed?: () -> bool
+  def like_change: () -> [ Integer?, Integer? ]
+  def like_will_change!: () -> void
+  def like_was: () -> Integer?
+  def like_previously_changed?: () -> bool
+  def like_previous_change: () -> Array[Integer?]?
+  def like_previously_was: () -> Integer?
+  def like_before_last_save: () -> Integer?
+  def like_change_to_be_saved: () -> Array[Integer?]?
+  def like_in_database: () -> Integer?
+  def saved_change_to_like: () -> Array[Integer?]?
+  def saved_change_to_like?: () -> bool
+  def will_save_change_to_like?: () -> bool
+  def restore_like!: () -> void
+  def clear_like_change: () -> void
+
+  attr_accessor user_id(): Integer
+  def user_id_changed?: () -> bool
+  def user_id_change: () -> [ Integer?, Integer? ]
+  def user_id_will_change!: () -> void
+  def user_id_was: () -> Integer?
+  def user_id_previously_changed?: () -> bool
+  def user_id_previous_change: () -> Array[Integer?]?
+  def user_id_previously_was: () -> Integer?
+  def user_id_before_last_save: () -> Integer?
+  def user_id_change_to_be_saved: () -> Array[Integer?]?
+  def user_id_in_database: () -> Integer?
+  def saved_change_to_user_id: () -> Array[Integer?]?
+  def saved_change_to_user_id?: () -> bool
+  def will_save_change_to_user_id?: () -> bool
+  def restore_user_id!: () -> void
+  def clear_user_id_change: () -> void
+
+  attr_accessor created_at(): ActiveSupport::TimeWithZone
+  def created_at_changed?: () -> bool
+  def created_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
+  def created_at_will_change!: () -> void
+  def created_at_was: () -> ActiveSupport::TimeWithZone?
+  def created_at_previously_changed?: () -> bool
+  def created_at_previous_change: () -> Array[ActiveSupport::TimeWithZone?]?
+  def created_at_previously_was: () -> ActiveSupport::TimeWithZone?
+  def created_at_before_last_save: () -> ActiveSupport::TimeWithZone?
+  def created_at_change_to_be_saved: () -> Array[ActiveSupport::TimeWithZone?]?
+  def created_at_in_database: () -> ActiveSupport::TimeWithZone?
+  def saved_change_to_created_at: () -> Array[ActiveSupport::TimeWithZone?]?
+  def saved_change_to_created_at?: () -> bool
+  def will_save_change_to_created_at?: () -> bool
+  def restore_created_at!: () -> void
+  def clear_created_at_change: () -> void
+
+  attr_accessor updated_at(): ActiveSupport::TimeWithZone
+  def updated_at_changed?: () -> bool
+  def updated_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
+  def updated_at_will_change!: () -> void
+  def updated_at_was: () -> ActiveSupport::TimeWithZone?
+  def updated_at_previously_changed?: () -> bool
+  def updated_at_previous_change: () -> Array[ActiveSupport::TimeWithZone?]?
+  def updated_at_previously_was: () -> ActiveSupport::TimeWithZone?
+  def updated_at_before_last_save: () -> ActiveSupport::TimeWithZone?
+  def updated_at_change_to_be_saved: () -> Array[ActiveSupport::TimeWithZone?]?
+  def updated_at_in_database: () -> ActiveSupport::TimeWithZone?
+  def saved_change_to_updated_at: () -> Array[ActiveSupport::TimeWithZone?]?
+  def saved_change_to_updated_at?: () -> bool
+  def will_save_change_to_updated_at?: () -> bool
+  def restore_updated_at!: () -> void
+  def clear_updated_at_change: () -> void
+
+  def user: () -> User
+  def user=: (User?) -> User?
+  def reload_user: () -> User?
+  def build_user: (untyped) -> User
+  def create_user: (untyped) -> User
+  def create_user!: (untyped) -> User
+
+  module GeneratedRelationMethods
+  end
+
+  class ActiveRecord_Relation < ActiveRecord::Relation
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[Post, Integer]
+    include Enumerable[Post]
+  end
+
+  class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+    include GeneratedRelationMethods
+    include _ActiveRecord_Relation[Post, Integer]
+  end
+end
