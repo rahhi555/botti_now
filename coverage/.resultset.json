@@ -273,10 +273,6 @@
           1,
           1,
           null,
-          null,
-          1,
-          1,
-          null,
           null
         ]
       },
@@ -306,16 +302,20 @@
           null,
           1,
           1,
-          null,
-          1,
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
           1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           1,
           null
         ]
@@ -350,23 +350,17 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/posts_controller.rb": {
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
           null
         ]
       }
     },
-    "timestamp": 1641308591
+    "timestamp": 1641476865
   },
   "Unit Tests": {
     "coverage": {
@@ -613,8 +607,6 @@
           null,
           1,
           1,
-          null,
-          1,
           null
         ]
       },
@@ -673,6 +665,6 @@
         ]
       }
     },
-    "timestamp": 1641309406
+    "timestamp": 1641477210
   }
 }

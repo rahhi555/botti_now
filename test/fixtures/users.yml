@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  uid: "<%= SecureRandom.uuid %>"
+  created_at: "<%= Time.now %>"
 
 two:
-  uid: "<%= SecureRandom.uuid %>"
+  created_at: "<%= Time.now %>"
