@@ -10,4 +10,8 @@ class PostTest < ActiveSupport::TestCase
   context 'messageは255文字までであること' do
     should validate_length_of(:message)
   end
+
+  context '空文字は許容しないこと' do
+    should validate_presence_of(:message)
+  end
 end

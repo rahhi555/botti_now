@@ -2,6 +2,6 @@
   p
     = post.message
 
-= form_with model: Post.new do |f|
+= form_with model: Post.new, data: { turbo: false } do |f|
     = f.text_area :message
-    = f.submit
+    = f.submit 'つぶやく'

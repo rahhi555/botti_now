@@ -227,6 +227,8 @@
       },
       "/Users/hirabayashinaoki/Public/programming/untitled/test/controllers/posts_controller_test.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -241,7 +243,8 @@
           1,
           1,
           null,
-          0,
+          1,
+          1,
           null,
           null,
           null,
@@ -263,6 +266,10 @@
           1,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -366,7 +373,6 @@
           1,
           1,
           1,
-          1,
           null,
           0,
           null,
@@ -385,7 +391,7 @@
         ]
       }
     },
-    "timestamp": 1642257604
+    "timestamp": 1642279467
   },
   "Unit Tests": {
     "coverage": {
@@ -642,33 +648,12 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/posts_controller.rb": {
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
           null
         ]
       },
@@ -701,8 +686,37 @@
           1,
           null
         ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/posts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1642257861
+    "timestamp": 1642279488
   }
 }
