@@ -1,0 +1,7 @@
+- @posts.each do |post|
+  p
+    = post.message
+
+= form_with model: Post.new do |f|
+    = f.text_area :message
+    = f.submit

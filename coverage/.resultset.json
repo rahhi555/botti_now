@@ -192,6 +192,13 @@
           null
         ]
       },
+      "/Users/hirabayashinaoki/Public/programming/untitled/config/initializers/lograge.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/hirabayashinaoki/Public/programming/untitled/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
@@ -227,11 +234,14 @@
           1,
           1,
           1,
+          1,
           null,
           null,
+          1,
+          1,
+          1,
           null,
-          null,
-          null,
+          0,
           null,
           null,
           null,
@@ -305,17 +315,11 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/posts_controller.rb": {
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
           1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
           1,
           null
         ]
@@ -350,17 +354,38 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1641476865
+    "timestamp": 1642257604
   },
   "Unit Tests": {
     "coverage": {
@@ -555,6 +580,13 @@
           null
         ]
       },
+      "/Users/hirabayashinaoki/Public/programming/untitled/config/initializers/lograge.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/hirabayashinaoki/Public/programming/untitled/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
@@ -610,12 +642,33 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -648,23 +701,8 @@
           1,
           null
         ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/posts_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1641477210
+    "timestamp": 1642257861
   }
 }

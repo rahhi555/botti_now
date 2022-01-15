@@ -1,17 +1,20 @@
-require "test_helper"
+require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
+  test 'indexではpostの一覧が反ること' do
     assert_generates '/', controller: 'home', action: 'index'
     get posts_url
     assert_response :success
+    assert_equal 2, @controller.view_assigns['posts'].length
   end
 
-  # test "should get create" do
-  #   get posts_create_url
-  #   assert_response :success
-  # end
-  #
+  test 'createではpostの登録ができること' do
+    assert_difference 'Post.count' do
+      post posts_url, params: { post: { message: 'new post', user_id: users(:one).id }}
+    end
+    assert_response :success
+  end
+
   # test "should get delete" do
   #   get posts_delete_url
   #   assert_response :success
