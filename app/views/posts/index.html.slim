@@ -1,7 +1,8 @@
-- @posts.each do |post|
-  p
-    = post.message
+= turbo_stream_from 'tweet_page'
 
-= form_with model: Post.new, data: { turbo: false } do |f|
-    = f.text_area :message
-    = f.submit 'つぶやく'
+#posts
+  = render partial: 'posts/post', collection: @posts
+
+= form_with model: Post.new do |f|
+  = f.text_area :message
+  = f.submit 'つぶやく'

@@ -181,6 +181,7 @@ GEM
     rbs_rails (0.9.0)
       parser
       rbs (>= 1)
+    redis (4.5.1)
     regexp_parser (2.2.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -260,6 +261,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails
   rbs_rails
+  redis
   selenium-webdriver
   shoulda-context
   shoulda-matchers
