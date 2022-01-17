@@ -3,6 +3,7 @@
 #posts
   = render partial: 'posts/post', collection: @posts
 
-= form_with model: Post.new do |f|
-  = f.text_area :message
-  = f.submit 'つぶやく'
+div.fixed.bottom-0.bg-pink-500
+  = form_with model: Post.new do |f|
+    = f.text_area :message
+    = f.submit 'つぶやく'
