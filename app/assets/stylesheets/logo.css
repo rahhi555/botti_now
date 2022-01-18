@@ -1,4 +1,4 @@
-@keyframes slideIn {
+@keyframes slide-in {
     0% {
         opacity: 0;
         transform: translate(-50%, 30px);

@@ -1,2 +1,5 @@
-div id=dom_id(post)
+div[id=dom_id(post)
+    class="absolute top-0 opacity-0"
+    style=bubble_style
+    data-action="animationend->posts#removeSelf"]
   = post.message

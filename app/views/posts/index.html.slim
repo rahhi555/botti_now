@@ -1,6 +1,7 @@
+= stylesheet_link_tag 'post'
 = turbo_stream_from 'tweet_page'
 
-#posts
+#posts data-controller="posts"
   = render partial: 'posts/post', collection: @posts
 
 div.fixed.bottom-0.bg-pink-500
