@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params.merge(user_id: User.first.id))
-
-    @post.save
+    pp "params: #{post_params}"
+    @post = Post.create(post_params.merge(user_id: User.first.id))
+    pp "error msg: #{@post.errors.full_messages}"
   end
 
   def delete; end

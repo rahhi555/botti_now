@@ -5,4 +5,8 @@ export default class extends Controller {
   removeSelf({ target }) {
     target.parentNode.removeChild(target)
   }
+
+  clearForm({ target }) {
+    target.reset()
+  }
 }
