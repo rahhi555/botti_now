@@ -6,9 +6,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    pp "params: #{post_params}"
     @post = Post.create(post_params.merge(user_id: User.first.id))
-    pp "error msg: #{@post.errors.full_messages}"
+    head :ok
   end
 
   def delete; end

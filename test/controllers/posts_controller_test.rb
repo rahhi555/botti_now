@@ -14,8 +14,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_difference 'Post.count' do
       post posts_url, params: { post: { message: 'new post', user_id: users(:one).id } }
     end
-    assert_response :redirect
-    assert_redirected_to posts_url
+    assert_response :success
   end
 
   # test "should get delete" do
