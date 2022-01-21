@@ -5,11 +5,10 @@
 
 div.fixed.bottom-0.bg-pink-500 data-controller="posts"
   = form_with model: [@user, Post.new], data: { action: "turbo:submit-end->posts#clearForm" } do |f|
+    = render 'shared/error_messages', object: f.object
+
     = f.text_area :message
     = f.submit 'つぶやく'
-
-= turbo_frame_tag 'tweet_error' do
-  div.error
 
 css:
   /* つぶやきを泡のように出現、消滅させる */

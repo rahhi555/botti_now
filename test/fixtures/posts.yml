@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  message: MyText
+  message: メッセージ１
   like: 1
   user: one
 
 two:
-  message: MyText
+  message: メッセージ２
   like: 1
   user: two

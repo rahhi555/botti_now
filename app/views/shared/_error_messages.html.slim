@@ -1,0 +1,7 @@
+= turbo_frame_tag 'tweet_error' do
+  - if object.errors.any?
+    #error_messages.text-red-700
+      ul.mb-0
+        - object.errors.full_messages.each do |message|
+          li
+            = message

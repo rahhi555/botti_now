@@ -4,15 +4,22 @@ class PostsController < ApplicationController
   def index
     set_or_create_user
     @posts = Post.all
+    @post = Post.new
   end
 
   def create
     user = User.find(params[:user_id])
-    user.posts.create!(post_params)
-    render turbo_stream: [
-      turbo_stream.append('tweet_page'),
-      turbo_stream.replace('tweet_error', '<turbo-frame id="tweet_error">error!</turbo-frame>')
-    ]
+    @post = user.posts.build(post_params)
+    if @post.save
+      render turbo_stream: [
+        turbo_stream.append('tweet_page'),
+        turbo_stream.replace('tweet_error', partial: 'shared/error_messages', locals: { object: @post })
+      ]
+    else
+      render turbo_stream:
+        turbo_stream.replace('tweet_error', partial: 'shared/error_messages', locals: { object: @post }),
+             status: :unprocessable_entity
+    end
   end
 
   def delete; end
