@@ -12,7 +12,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'createではpostの登録ができること' do
     assert_difference 'Post.count' do
-      post posts_url, params: { post: { message: 'new post', user_id: users(:one).id } }
+      post user_posts_path(users(:one).id), params: { post: { message: 'new post' } }
     end
     assert_response :success
   end

@@ -25,7 +25,10 @@ module Untitled
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.generators.template_engine = :slim
+    config.generators do |g|
+      g.template_engine :slim
+      g.skip_routes true
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #

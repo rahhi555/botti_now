@@ -52,6 +52,8 @@ gem 'slim-rails'
 
 gem 'lograge'
 
+gem 'gimei'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -78,5 +80,4 @@ group :test do
   gem 'shoulda-context'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
-
 end

@@ -7,7 +7,11 @@ class VisitTopPagesTest < ApplicationSystemTestCase
     visit root_url
 
     assert_selector 'a', text: 'つぶやく'
-    click_link 'つぶやく'
+
+    assert_changes -> { User.count } do
+      click_link 'つぶやく'
+    end
+
     assert has_current_path?(posts_url)
   end
 end
