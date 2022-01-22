@@ -2,7 +2,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
-  broadcasts_to ->(_) { 'tweet_page' }
+  after_create_commit -> { broadcast_append_to 'tweet_page' }
 
   validates :message, length: { maximum: 255 }, presence: true
 end

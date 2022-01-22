@@ -9,10 +9,15 @@ class PostsController < ApplicationController
 
   def create
     user = User.find(params[:user_id])
-    @post = user.posts.create(post_params)
-    status = @post.valid? ? :ok : :unprocessable_entity
-    render turbo_stream:
-     turbo_stream.replace('tweet_error', partial: 'shared/error_messages', locals: { object: @post }), status:
+    @post = user.posts.build(post_params)
+
+    if @post.save
+      head :ok
+    else
+      render turbo_stream:
+               turbo_stream.replace('error_messages', partial: 'shared/error_messages', locals: { object: @post }),
+             status: :unprocessable_entity
+    end
   end
 
   def delete; end

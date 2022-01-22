@@ -52,18 +52,18 @@ class Post < ApplicationRecord
   def restore_like!: () -> void
   def clear_like_change: () -> void
 
-  attr_accessor user_id(): Integer
+  attr_accessor user_id(): String?
   def user_id_changed?: () -> bool
-  def user_id_change: () -> [ Integer?, Integer? ]
+  def user_id_change: () -> [ String?, String? ]
   def user_id_will_change!: () -> void
-  def user_id_was: () -> Integer?
+  def user_id_was: () -> String?
   def user_id_previously_changed?: () -> bool
-  def user_id_previous_change: () -> Array[Integer?]?
-  def user_id_previously_was: () -> Integer?
-  def user_id_before_last_save: () -> Integer?
-  def user_id_change_to_be_saved: () -> Array[Integer?]?
-  def user_id_in_database: () -> Integer?
-  def saved_change_to_user_id: () -> Array[Integer?]?
+  def user_id_previous_change: () -> Array[String?]?
+  def user_id_previously_was: () -> String?
+  def user_id_before_last_save: () -> String?
+  def user_id_change_to_be_saved: () -> Array[String?]?
+  def user_id_in_database: () -> String?
+  def saved_change_to_user_id: () -> Array[String?]?
   def saved_change_to_user_id?: () -> bool
   def will_save_change_to_user_id?: () -> bool
   def restore_user_id!: () -> void

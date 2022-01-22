@@ -1,39 +1,22 @@
 class User < ApplicationRecord
-  extend _ActiveRecord_Relation_ClassMethods[User, ActiveRecord_Relation, Integer]
+  extend _ActiveRecord_Relation_ClassMethods[User, ActiveRecord_Relation, String]
 
-  attr_accessor id(): Integer
+  attr_accessor id(): String
   def id_changed?: () -> bool
-  def id_change: () -> [ Integer?, Integer? ]
+  def id_change: () -> [ String?, String? ]
   def id_will_change!: () -> void
-  def id_was: () -> Integer?
+  def id_was: () -> String?
   def id_previously_changed?: () -> bool
-  def id_previous_change: () -> Array[Integer?]?
-  def id_previously_was: () -> Integer?
-  def id_before_last_save: () -> Integer?
-  def id_change_to_be_saved: () -> Array[Integer?]?
-  def id_in_database: () -> Integer?
-  def saved_change_to_id: () -> Array[Integer?]?
+  def id_previous_change: () -> Array[String?]?
+  def id_previously_was: () -> String?
+  def id_before_last_save: () -> String?
+  def id_change_to_be_saved: () -> Array[String?]?
+  def id_in_database: () -> String?
+  def saved_change_to_id: () -> Array[String?]?
   def saved_change_to_id?: () -> bool
   def will_save_change_to_id?: () -> bool
   def restore_id!: () -> void
   def clear_id_change: () -> void
-
-  attr_accessor uid(): String
-  def uid_changed?: () -> bool
-  def uid_change: () -> [ String?, String? ]
-  def uid_will_change!: () -> void
-  def uid_was: () -> String?
-  def uid_previously_changed?: () -> bool
-  def uid_previous_change: () -> Array[String?]?
-  def uid_previously_was: () -> String?
-  def uid_before_last_save: () -> String?
-  def uid_change_to_be_saved: () -> Array[String?]?
-  def uid_in_database: () -> String?
-  def saved_change_to_uid: () -> Array[String?]?
-  def saved_change_to_uid?: () -> bool
-  def will_save_change_to_uid?: () -> bool
-  def restore_uid!: () -> void
-  def clear_uid_change: () -> void
 
   attr_accessor created_at(): ActiveSupport::TimeWithZone
   def created_at_changed?: () -> bool
@@ -69,6 +52,23 @@ class User < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
+  attr_accessor name(): String
+  def name_changed?: () -> bool
+  def name_change: () -> [ String?, String? ]
+  def name_will_change!: () -> void
+  def name_was: () -> String?
+  def name_previously_changed?: () -> bool
+  def name_previous_change: () -> Array[String?]?
+  def name_previously_was: () -> String?
+  def name_before_last_save: () -> String?
+  def name_change_to_be_saved: () -> Array[String?]?
+  def name_in_database: () -> String?
+  def saved_change_to_name: () -> Array[String?]?
+  def saved_change_to_name?: () -> bool
+  def will_save_change_to_name?: () -> bool
+  def restore_name!: () -> void
+  def clear_name_change: () -> void
+
   def posts: () -> Post::ActiveRecord_Associations_CollectionProxy
   def posts=: (Post::ActiveRecord_Associations_CollectionProxy | Array[Post]) -> (Post::ActiveRecord_Associations_CollectionProxy | Array[Post])
   def post_ids: () -> Array[Integer]
@@ -79,12 +79,12 @@ class User < ApplicationRecord
 
   class ActiveRecord_Relation < ActiveRecord::Relation
     include GeneratedRelationMethods
-    include _ActiveRecord_Relation[User, Integer]
+    include _ActiveRecord_Relation[User, String]
     include Enumerable[User]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
     include GeneratedRelationMethods
-    include _ActiveRecord_Relation[User, Integer]
+    include _ActiveRecord_Relation[User, String]
   end
 end

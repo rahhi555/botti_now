@@ -3,8 +3,11 @@
 #posts data-controller="posts"
   = render partial: 'posts/post', collection: @posts
 
-div.fixed.bottom-0.bg-pink-500 data-controller="posts"
-  = form_with model: [@user, Post.new], data: { action: "turbo:submit-end->posts#clearForm" } do |f|
+div.fixed.bottom-0.bg-pink-500 data-controller="posts error-messages"
+  = form_with model: [@user, Post.new], \
+              data: { action: "turbo:submit-end->posts#clearForm turbo:submit-start->error-messages#clearErrorMessages" } \
+              do |f|
+
     = render 'shared/error_messages', object: f.object
 
     = f.text_area :message

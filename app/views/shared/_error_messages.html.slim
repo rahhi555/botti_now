@@ -1,6 +1,6 @@
-#tweet_error
+#error_messages data-error-messages-target='errorMessages'
   - if object.errors.any?
-    #error_messages.text-red-700
+    .text-red-700
       ul.mb-0
         - object.errors.full_messages.each do |message|
           li

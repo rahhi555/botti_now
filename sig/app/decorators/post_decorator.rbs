@@ -1,0 +1,6 @@
+module PostDecorator
+  # ツイートのふわっと浮き上がるアニメーションスタイルを返す。
+  # その際アニメーションの全体の時間(duration),アニメーションが始まる時間(delay)及び画面の配置(left)は初期値はランダムで決まる。
+  # ただしdelayに関しては作成直後のものはすぐ表示される。
+  def bubble_style: () -> ::String
+end
