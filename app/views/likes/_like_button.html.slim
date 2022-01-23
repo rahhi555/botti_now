@@ -1,6 +1,6 @@
 .row-start-3.col-start-3.inline-block
-  = button_to  post, \
-               params: { post: { like: post.like.to_i + 1 } }, \
+  = button_to  post_likes_path(post), \
+               params: { post: { like: post.likes.length + 1 } }, \
                form: { data: { action: 'turbo:submit-end->posts#disableLikeButton' } },
                class: %w[inline-flex items-center justify-center space-x-2 border border-transparent text-sm font-medium \
                          rounded-full w-12 h-12 text-white bg-green-600 hover:bg-green-700 transition-colors] do

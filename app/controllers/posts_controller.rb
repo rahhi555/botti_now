@@ -3,7 +3,7 @@
 class PostsController < ApplicationController
   def index
     set_or_create_user
-    @posts = Post.all
+    @posts = Post.all.includes(:likes, :user)
     @post = Post.new
   end
 
@@ -22,22 +22,18 @@ class PostsController < ApplicationController
 
   def delete; end
 
-  def update
-    post = Post.find(params[:id])
-    post.update!(post_params)
-    render turbo_stream:
-             turbo_stream.replace("like_post_#{post.id}", "いいね！#{post.like}")
-  end
+  def update; end
 
   private
 
   def post_params
-    params.require(:post).permit(:message, :like, :user_id)
+    params.require(:post).permit(:message, :user_id)
   end
 
   def set_or_create_user
-    @user = User.find_or_create_by!(id: session[:user_id])
-    session[:user_id] = @user.id
-    @user
+    unless current_user
+      @current_user = User.create!
+      session[:user_id] = @current_user.id
+    end
   end
 end

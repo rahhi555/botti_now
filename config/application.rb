@@ -27,6 +27,7 @@ module Untitled
     config.generators do |g|
       g.template_engine :slim
       g.skip_routes true
+      g.helper false
     end
 
     config.time_zone = 'Tokyo'

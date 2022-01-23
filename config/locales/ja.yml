@@ -3,9 +3,16 @@ ja:
     models:
       user: 'ユーザー'
       post: '投稿'
+      like: 'いいね'
     attributes:
       user:
         id: 'ユーザーID'
+        like_id: 'いいね'
         name: 'お名前'
       post:
+        user: 'ユーザー'
+        like_id: 'いいね'
         message: 'メッセージ'
+      like:
+        user_id: 'ユーザー'
+        post_id: '投稿'

@@ -10,15 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_060734) do
+ActiveRecord::Schema.define(version: 2022_01_23_043634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
+  create_table "likes", force: :cascade do |t|
+    t.uuid "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "message", null: false
-    t.integer "like"
     t.uuid "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -31,5 +39,7 @@ ActiveRecord::Schema.define(version: 2022_01_21_060734) do
     t.string "name", null: false
   end
 
-  add_foreign_key "posts", "users"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users", on_delete: :nullify
+  add_foreign_key "posts", "users", on_delete: :nullify
 end
