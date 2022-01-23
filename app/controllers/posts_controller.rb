@@ -22,7 +22,12 @@ class PostsController < ApplicationController
 
   def delete; end
 
-  def update; end
+  def update
+    post = Post.find(params[:id])
+    post.update!(post_params)
+    render turbo_stream:
+             turbo_stream.replace("like_post_#{post.id}", "いいね！#{post.like}")
+  end
 
   private
 

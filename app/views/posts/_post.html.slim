@@ -1,6 +1,15 @@
 div[id=dom_id(post)
-    class="absolute top-0 opacity-0"
-    style=post.bubble_style
-    data-action="animationend->posts#removeSelf"]
-  = post.message
-  / = button_to 'いいね', action:
+  class="absolute top-0 bg-white py-4 px-16 rounded-full opacity-0"
+  data-action="animationend->posts#removeSelf"
+  style=post.bubble_style]
+
+  = "#{time_ago_in_words(post.created_at)}前"
+
+  div
+    = post.message
+
+  .flex.justify-between.items-end
+    span id=dom_id(post, :like)
+      = "いいね！#{post.like.to_i}"
+
+    = render 'posts/like_button', post:

@@ -17,6 +17,6 @@ class PostDecoratorTest < ActiveSupport::TestCase
     travel_to Time.current - 30 do
       @post.save!
     end
-    assert_match /tweet-bubble \d{1,2}s [^0]{1,2}s/, @post.reload.bubble_style
+    assert_match /tweet-bubble \d{1,2}s [^0]\d?s/, @post.reload.bubble_style
   end
 end
