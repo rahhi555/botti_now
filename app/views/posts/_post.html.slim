@@ -5,13 +5,8 @@ div[id=dom_id(post)
 
   = "#{time_ago_in_words(post.created_at)}前"
 
-  div
+  .w-44.break-words
     = post.message
 
-  .flex.justify-between.items-end
-    span id=dom_id(post, :like)
-      = "いいね！#{post.likes.length}"
-
-    / post追加時のブロードキャストにおいて、current_userがnilになってしまうためこのようなif文になっている(cookieを取得できない)
-    - if current_user && post.user != current_user
-      = render('likes/like_button', post:)
+  div id=dom_id(post, :like)
+    = render('likes/like_button', post:)

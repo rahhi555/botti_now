@@ -1,21 +1,27 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  skip_before_action :have_current_user, only: :index
+
   def index
-    set_or_create_user
-    @posts = Post.all.includes(:likes, :user)
-    @post = Post.new
+    unless current_user
+      @current_user = User.create!
+      session[:user_id] = @current_user.id
+    end
+    @posts = Post.all.includes(:likes)
   end
 
   def create
-    user = User.find(params[:user_id])
-    @post = user.posts.build(post_params)
+    post = current_user.posts.build(post_params)
 
-    if @post.save
+    if post.save
+      post.broadcast_append_to 'tweet_page'
       head :ok
     else
       render turbo_stream:
-               turbo_stream.replace('error_messages', partial: 'shared/error_messages', locals: { object: @post }),
+               turbo_stream.replace('error_messages',
+                                    partial: 'shared/error_messages',
+                                    locals: { object: post }),
              status: :unprocessable_entity
     end
   end
@@ -28,12 +34,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message, :user_id)
-  end
-
-  def set_or_create_user
-    unless current_user
-      @current_user = User.create!
-      session[:user_id] = @current_user.id
-    end
   end
 end

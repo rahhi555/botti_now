@@ -18,4 +18,9 @@
         background-color: #af4888;
         border-color: #af4888;
     }
+
+    .like-btn-base {
+        @apply inline-flex items-center justify-center space-x-2 border border-transparent text-sm font-medium
+                rounded-full w-12 h-12 transition-colors;
+    }
 }

@@ -35,23 +35,6 @@ class Post < ApplicationRecord
   def restore_message!: () -> void
   def clear_message_change: () -> void
 
-  attr_accessor like(): Integer?
-  def like_changed?: () -> bool
-  def like_change: () -> [ Integer?, Integer? ]
-  def like_will_change!: () -> void
-  def like_was: () -> Integer?
-  def like_previously_changed?: () -> bool
-  def like_previous_change: () -> Array[Integer?]?
-  def like_previously_was: () -> Integer?
-  def like_before_last_save: () -> Integer?
-  def like_change_to_be_saved: () -> Array[Integer?]?
-  def like_in_database: () -> Integer?
-  def saved_change_to_like: () -> Array[Integer?]?
-  def saved_change_to_like?: () -> bool
-  def will_save_change_to_like?: () -> bool
-  def restore_like!: () -> void
-  def clear_like_change: () -> void
-
   attr_accessor user_id(): String?
   def user_id_changed?: () -> bool
   def user_id_change: () -> [ String?, String? ]
@@ -102,6 +85,11 @@ class Post < ApplicationRecord
   def will_save_change_to_updated_at?: () -> bool
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
+
+  def likes: () -> Like::ActiveRecord_Associations_CollectionProxy
+  def likes=: (Like::ActiveRecord_Associations_CollectionProxy | Array[Like]) -> (Like::ActiveRecord_Associations_CollectionProxy | Array[Like])
+  def like_ids: () -> Array[Integer]
+  def like_ids=: (Array[Integer]) -> Array[Integer]
 
   def user: () -> User
   def user=: (User?) -> User?

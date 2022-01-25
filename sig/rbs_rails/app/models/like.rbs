@@ -1,22 +1,56 @@
-class User < ApplicationRecord
-  extend _ActiveRecord_Relation_ClassMethods[User, ActiveRecord_Relation, String]
+class Like < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[Like, ActiveRecord_Relation, Integer]
 
-  attr_accessor id(): String
+  attr_accessor id(): Integer
   def id_changed?: () -> bool
-  def id_change: () -> [ String?, String? ]
+  def id_change: () -> [ Integer?, Integer? ]
   def id_will_change!: () -> void
-  def id_was: () -> String?
+  def id_was: () -> Integer?
   def id_previously_changed?: () -> bool
-  def id_previous_change: () -> Array[String?]?
-  def id_previously_was: () -> String?
-  def id_before_last_save: () -> String?
-  def id_change_to_be_saved: () -> Array[String?]?
-  def id_in_database: () -> String?
-  def saved_change_to_id: () -> Array[String?]?
+  def id_previous_change: () -> Array[Integer?]?
+  def id_previously_was: () -> Integer?
+  def id_before_last_save: () -> Integer?
+  def id_change_to_be_saved: () -> Array[Integer?]?
+  def id_in_database: () -> Integer?
+  def saved_change_to_id: () -> Array[Integer?]?
   def saved_change_to_id?: () -> bool
   def will_save_change_to_id?: () -> bool
   def restore_id!: () -> void
   def clear_id_change: () -> void
+
+  attr_accessor user_id(): String?
+  def user_id_changed?: () -> bool
+  def user_id_change: () -> [ String?, String? ]
+  def user_id_will_change!: () -> void
+  def user_id_was: () -> String?
+  def user_id_previously_changed?: () -> bool
+  def user_id_previous_change: () -> Array[String?]?
+  def user_id_previously_was: () -> String?
+  def user_id_before_last_save: () -> String?
+  def user_id_change_to_be_saved: () -> Array[String?]?
+  def user_id_in_database: () -> String?
+  def saved_change_to_user_id: () -> Array[String?]?
+  def saved_change_to_user_id?: () -> bool
+  def will_save_change_to_user_id?: () -> bool
+  def restore_user_id!: () -> void
+  def clear_user_id_change: () -> void
+
+  attr_accessor post_id(): Integer?
+  def post_id_changed?: () -> bool
+  def post_id_change: () -> [ Integer?, Integer? ]
+  def post_id_will_change!: () -> void
+  def post_id_was: () -> Integer?
+  def post_id_previously_changed?: () -> bool
+  def post_id_previous_change: () -> Array[Integer?]?
+  def post_id_previously_was: () -> Integer?
+  def post_id_before_last_save: () -> Integer?
+  def post_id_change_to_be_saved: () -> Array[Integer?]?
+  def post_id_in_database: () -> Integer?
+  def saved_change_to_post_id: () -> Array[Integer?]?
+  def saved_change_to_post_id?: () -> bool
+  def will_save_change_to_post_id?: () -> bool
+  def restore_post_id!: () -> void
+  def clear_post_id_change: () -> void
 
   attr_accessor created_at(): ActiveSupport::TimeWithZone
   def created_at_changed?: () -> bool
@@ -52,43 +86,30 @@ class User < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
-  attr_accessor name(): String
-  def name_changed?: () -> bool
-  def name_change: () -> [ String?, String? ]
-  def name_will_change!: () -> void
-  def name_was: () -> String?
-  def name_previously_changed?: () -> bool
-  def name_previous_change: () -> Array[String?]?
-  def name_previously_was: () -> String?
-  def name_before_last_save: () -> String?
-  def name_change_to_be_saved: () -> Array[String?]?
-  def name_in_database: () -> String?
-  def saved_change_to_name: () -> Array[String?]?
-  def saved_change_to_name?: () -> bool
-  def will_save_change_to_name?: () -> bool
-  def restore_name!: () -> void
-  def clear_name_change: () -> void
-
-  def posts: () -> Post::ActiveRecord_Associations_CollectionProxy
-  def posts=: (Post::ActiveRecord_Associations_CollectionProxy | Array[Post]) -> (Post::ActiveRecord_Associations_CollectionProxy | Array[Post])
-  def post_ids: () -> Array[Integer]
-  def post_ids=: (Array[Integer]) -> Array[Integer]
-  def likes: () -> Like::ActiveRecord_Associations_CollectionProxy
-  def likes=: (Like::ActiveRecord_Associations_CollectionProxy | Array[Like]) -> (Like::ActiveRecord_Associations_CollectionProxy | Array[Like])
-  def like_ids: () -> Array[Integer]
-  def like_ids=: (Array[Integer]) -> Array[Integer]
+  def user: () -> User
+  def user=: (User?) -> User?
+  def reload_user: () -> User?
+  def build_user: (untyped) -> User
+  def create_user: (untyped) -> User
+  def create_user!: (untyped) -> User
+  def post: () -> Post
+  def post=: (Post?) -> Post?
+  def reload_post: () -> Post?
+  def build_post: (untyped) -> Post
+  def create_post: (untyped) -> Post
+  def create_post!: (untyped) -> Post
 
   module GeneratedRelationMethods
   end
 
   class ActiveRecord_Relation < ActiveRecord::Relation
     include GeneratedRelationMethods
-    include _ActiveRecord_Relation[User, String]
-    include Enumerable[User]
+    include _ActiveRecord_Relation[Like, Integer]
+    include Enumerable[Like]
   end
 
   class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
     include GeneratedRelationMethods
-    include _ActiveRecord_Relation[User, String]
+    include _ActiveRecord_Relation[Like, Integer]
   end
 end

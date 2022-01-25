@@ -11,4 +11,8 @@ module PostDecorator
     delay = (Time.current - created_at) < 10 ? 0 : rand(1..10)
     "animation: tweet-bubble #{duration}s #{delay}s; left: #{left}vw;"
   end
+
+  def current_user_liked?
+    likes.pluck(:user_id).include?(current_user.id)
+  end
 end
