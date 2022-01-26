@@ -8,5 +8,4 @@ div[id=dom_id(post)
   .w-44.break-words
     = post.message
 
-  div id=dom_id(post, :like)
-    = render('likes/like_button', post:)
+  = render('likes/like_button', post:)
