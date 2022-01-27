@@ -1,6 +1,8 @@
 div[id=dom_id(post)
-  class="absolute top-0 bg-white py-4 px-16 rounded-full opacity-0"
-  data-action="animationend->posts#removeSelf"
+  class="absolute top-0 bg-white py-4 px-16 rounded-full opacity-0 drop-shadow-xl \
+          #{'hover:border-rose-600 border-2 cursor-pointer' unless post.current_user_liked?}"
+  data-controller="likes"
+  data-action="animationend->posts#removeSelf #{'click->likes#submitLike' unless post.current_user_liked?}"
   style=post.bubble_style]
 
   = "#{time_ago_in_words(post.created_at)}前"
