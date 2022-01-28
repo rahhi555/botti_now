@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'debug'
 
 class ApplicationHelperTest < ActionView::TestCase
   test 'current_userメソッドは、session_idが無ければnilを返す' do

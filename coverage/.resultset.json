@@ -320,8 +320,8 @@
           null,
           1,
           1,
-          31,
-          31,
+          57,
+          57,
           null,
           null
         ]
@@ -354,7 +354,6 @@
       },
       "/Users/hirabayashinaoki/Public/programming/untitled/test/helpers/application_helper_test.rb": {
         "lines": [
-          1,
           1,
           null,
           1,
@@ -513,33 +512,9 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/decorators/post_decorator.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          15,
-          15,
-          null,
-          15,
-          15,
-          null,
-          null,
-          1,
-          14,
-          null,
-          null
-        ]
-      },
       "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/likes_controller.rb": {
         "lines": [
           null,
-          null,
-          1,
           null,
           1,
           1,
@@ -612,6 +587,28 @@
           null
         ]
       },
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/decorators/post_decorator.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          15,
+          15,
+          null,
+          15,
+          15,
+          null,
+          null,
+          1,
+          40,
+          null,
+          null
+        ]
+      },
       "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
         "lines": [
           null,
@@ -624,7 +621,7 @@
         ]
       }
     },
-    "timestamp": 1643209183
+    "timestamp": 1643330083
   },
   "Unit Tests": {
     "coverage": {
@@ -874,6 +871,9 @@
           null,
           1,
           null,
+          null,
+          1,
+          null,
           1,
           null,
           1,
@@ -1062,8 +1062,8 @@
           null,
           1,
           1,
-          25,
-          25,
+          47,
+          47,
           null,
           null
         ]
@@ -1085,7 +1085,7 @@
           null,
           null,
           1,
-          12,
+          34,
           null,
           null
         ]
@@ -1093,8 +1093,6 @@
       "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/likes_controller.rb": {
         "lines": [
           null,
-          null,
-          1,
           null,
           1,
           1,
@@ -1120,6 +1118,6 @@
         ]
       }
     },
-    "timestamp": 1643209224
+    "timestamp": 1643330034
   }
 }

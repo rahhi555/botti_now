@@ -10,7 +10,8 @@ div id=dom_id(post, :like) class='flex justify-between items-end'
     - else
       = button_to post_likes_path(post, hoge: 'hoge!'), \
                   params: { post: { like: post.likes.length + 1 } }, \
-                  class: 'like-btn-base text-white bg-green-600 hover:bg-green-700' do
+                  disabled: true, \
+                  class: 'like-btn-base text-white bg-green-600 hover:bg-green-700 cursor-pointer' do
         svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 \
