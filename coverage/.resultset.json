@@ -512,17 +512,12 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/likes_controller.rb": {
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          null,
-          null,
           null,
           1,
           null
@@ -609,19 +604,24 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/home_controller.rb": {
+      "/Users/hirabayashinaoki/Public/programming/untitled/app/controllers/likes_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           null
         ]
       }
     },
-    "timestamp": 1643330083
+    "timestamp": 1643335315
   },
   "Unit Tests": {
     "coverage": {

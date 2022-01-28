@@ -20,7 +20,7 @@ require 'rails/test_unit/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Untitled
+module BottiNow
   class Application < Rails::Application
     config.load_defaults 7.0
 
