@@ -3,7 +3,7 @@ div[id=dom_id(post)
           #{'hover:border-rose-600 border-2 cursor-pointer' unless post.current_user_liked?}"
   data-controller="likes"
   data-action="animationend->posts#removeSelf #{'click->likes#submitLike' unless post.current_user_liked?}"
-  style=post.bubble_style]
+  style="#{post.bubble_style} will-change: transform, opacity;"]
 
   = "#{time_ago_in_words(post.created_at)}前"
 
