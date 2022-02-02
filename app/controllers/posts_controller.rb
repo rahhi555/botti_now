@@ -16,7 +16,10 @@ class PostsController < ApplicationController
 
     if post.save
       post.broadcast_append_to 'tweet_page'
-      head :ok
+      render turbo_stream:
+               turbo_stream.replace('bot_message',
+                                    partial: 'chaplus_api/message',
+                                    locals: { message: 'うーんとね...' })
     else
       render turbo_stream:
                turbo_stream.replace('error_messages',

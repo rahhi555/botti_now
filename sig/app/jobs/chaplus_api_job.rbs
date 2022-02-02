@@ -1,0 +1,4 @@
+class ChaplusApiJob < ApplicationJob
+  def perform: (User user, String utterance) -> nil
+  def send_chaplus_api: (String username, String utterance) -> nil
+end
