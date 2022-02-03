@@ -2,20 +2,28 @@
 require 'csv'
 
 class ChaplusApiJob < ApplicationJob
+  include ApplicationHelper
+
   queue_as :default
   sidekiq_options retry: false
 
   # @param [User] user ユーザー
-  # @param [String] utterance 会話BOTに送信する会話テキスト
-  def perform(user, utterance)
-    res = send_chaplus_api(user.name, utterance)
+  # @param [Post] post 送信する投稿
+  # 会話BOTにpost.messageを送信し、BOTからの返信をpost.bot_messageとしてアップデートする。
+  # その後、ツイートとBOT返信がブロードキャストされる。
+  def perform(user, post)
+    res = send_chaplus_api(user.name, post.message)
     # 返ってきたメッセージ。utterance = 発音という意味らしい
-    message = JSON.parse(res.body)['responses'].sample['utterance']
-    bot_broadcast(user, message)
+    bot_message = JSON.parse(res.body)['responses'].sample['utterance']
+    post.update!(bot_message:)
+    post.broadcast_append_to 'tweet_page'
+    bot_broadcast(user, bot_message)
   rescue StandardError => e
     Rails.logger.error e
-    message = 'ごめんよく聞こえなかったずら...。もう一度言ってもらってもいいずら？'
-    bot_broadcast(user, message)
+
+    post.destroy
+    bot_message = 'ごめんよく聞こえなかったずら...。もう一度言ってもらってもいいずら？'
+    bot_broadcast(user, bot_message)
   end
 
   private
@@ -33,10 +41,10 @@ class ChaplusApiJob < ApplicationJob
                    params.to_json, 'Content-Type' => 'application/json'
   end
 
-  def bot_broadcast(user, message)
+  def bot_broadcast(user, bot_message)
     Turbo::StreamsChannel.broadcast_replace_to user,
                                                target: 'bot_message',
                                                partial: 'chaplus_api/message',
-                                               locals: { message: }
+                                               locals: { bot_message: }
   end
 end

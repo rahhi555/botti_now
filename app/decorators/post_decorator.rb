@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module PostDecorator
+  include ApplicationHelper
+
   # ツイートのふわっと浮き上がるアニメーションスタイルを返す。
   # その際アニメーションの全体の時間(duration),アニメーションが始まる時間(delay)及び画面の配置(left)は初期値はランダムで決まる。
   # ただしdelayに関しては作成直後のものはすぐ表示される。
@@ -12,7 +14,10 @@ module PostDecorator
     "animation: tweet-bubble #{duration}s #{delay}s; left: #{left}vw;"
   end
 
+  # @return Boolean
+  # 対象の投稿を現在のユーザーがいいね済みかどうかを判定する。
+  # ブロードキャストのタイミングによってはcurrent_user
   def current_user_liked?
-    likes.pluck(:user_id).include?(current_user.id)
+    likes.pluck(:user_id).include?(current_user&.id)
   end
 end

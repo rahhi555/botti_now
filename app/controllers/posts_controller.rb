@@ -15,12 +15,11 @@ class PostsController < ApplicationController
     post = current_user.posts.build(post_params)
 
     if post.save
-      post.broadcast_append_to 'tweet_page'
-      ChaplusApiJob.perform_later(current_user, post.message)
+      ChaplusApiJob.perform_later(current_user, post)
       render turbo_stream:
                turbo_stream.replace('bot_message',
                                     partial: 'chaplus_api/message',
-                                    locals: { message: 'うーんとね...' })
+                                    locals: { bot_message: 'うーんとね...' })
     else
       render turbo_stream:
                turbo_stream.replace('error_messages',

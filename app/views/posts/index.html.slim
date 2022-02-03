@@ -12,7 +12,7 @@ div id="tweet-form" class="fixed bottom-0 w-full" data-controller="posts error-m
 
     = render 'shared/error_messages', object: f.object
 
-    = render 'chaplus_api/message', message: 'こんにちは！'
+    = render 'chaplus_api/message', bot_message: 'こんにちは！'
 
     .flex
       = f.text_area :message, class: %w[block w-full px-4 py-2 text-gray-700 bg-white/75 border rounded-md \

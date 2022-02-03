@@ -10,4 +10,7 @@ div[id=dom_id(post)
   .w-44.break-words
     = post.message
 
+  .text-gray-700
+    = post.bot_message
+
   = render('likes/like_button', post:)
