@@ -35,5 +35,7 @@ module BottiNow
 
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end

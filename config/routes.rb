@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   resources :posts, only: %i[create index delete update], shallow: true do
     resources :likes, only: %i[create delete]
   end
+
+  if Rails.env.development?
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end

@@ -1,4 +1,5 @@
 = turbo_stream_from 'tweet_page'
+= turbo_stream_from current_user
 
 #posts data-controller="posts"
   = render partial: 'posts/post', collection: @posts

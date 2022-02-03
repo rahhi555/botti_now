@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
     if post.save
       post.broadcast_append_to 'tweet_page'
+      ChaplusApiJob.perform_later(current_user, post.message)
       render turbo_stream:
                turbo_stream.replace('bot_message',
                                     partial: 'chaplus_api/message',
