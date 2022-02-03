@@ -16,7 +16,7 @@ class ChaplusApiJob < ApplicationJob
     # 返ってきたメッセージ。utterance = 発音という意味らしい
     bot_message = JSON.parse(res.body)['responses'].sample['utterance']
     post.update!(bot_message:)
-    post.broadcast_append_to 'tweet_page'
+    post.broadcast_append_to 'tweet_page', locals: { post:, user: }
     bot_broadcast(user, bot_message)
   rescue StandardError => e
     Rails.logger.error e

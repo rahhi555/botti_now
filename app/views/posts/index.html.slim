@@ -2,7 +2,7 @@
 = turbo_stream_from current_user
 
 #posts data-controller="posts"
-  = render partial: 'posts/post', collection: @posts
+  = render partial: 'posts/post', collection: @posts, locals: { user: current_user }
 
 div id="tweet-form" class="fixed bottom-0 w-full" data-controller="posts error-messages"
   = form_with model: Post.new, \
