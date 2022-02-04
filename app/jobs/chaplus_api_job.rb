@@ -19,11 +19,10 @@ class ChaplusApiJob < ApplicationJob
     post.broadcast_append_to 'tweet_page', locals: { post:, user: }
     bot_broadcast(user, bot_message)
   rescue StandardError => e
-    Rails.logger.error e
+    logger.error e
 
     post.destroy
-    bot_message = 'ごめんよく聞こえなかったずら...。もう一度言ってもらってもいいずら？'
-    bot_broadcast(user, bot_message)
+    bot_broadcast(user, 'ごめんよく聞こえなかったずら...。もう一度言ってもらってもいいずら？')
   end
 
   private

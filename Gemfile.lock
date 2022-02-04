@@ -129,6 +129,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
+    minitest-stub_any_instance (1.0.3)
     msgpack (1.4.2)
     net-imap (0.2.3)
       digest
@@ -296,6 +297,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   lograge
+  minitest-stub_any_instance
   pg
   puma (~> 5.0)
   rails

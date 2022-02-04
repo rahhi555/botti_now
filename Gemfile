@@ -88,4 +88,5 @@ group :test do
   gem 'shoulda-context'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
+  gem 'minitest-stub_any_instance'
 end

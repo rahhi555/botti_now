@@ -1,4 +1,10 @@
 class ChaplusApiJob < ApplicationJob
-  def perform: (User user, String utterance) -> nil
-  def send_chaplus_api: (String username, String utterance) -> nil
+  # @param [User] user ユーザー
+  # @param [Post] post 送信する投稿
+  # 会話BOTにpost.messageを送信し、BOTからの返信をpost.bot_messageとしてアップデートする。
+  # その後、ツイートとBOT返信がブロードキャストされる。
+  def perform: (User user, Post post) -> nil
+  def send_chaplus_api: (String username, String utterance) -> Net::HTTPResponse
+  def bot_broadcast: (User user, String bot_message) -> void
+
 end
