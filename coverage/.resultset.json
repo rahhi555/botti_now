@@ -52,8 +52,6 @@
           1,
           1,
           null,
-          1,
-          null,
           null
         ]
       },
@@ -116,6 +114,7 @@
           null,
           null,
           null,
+          1,
           null
         ]
       },
@@ -685,6 +684,34 @@
           null
         ]
       },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/home_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/likes_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
       "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/posts_controller.rb": {
         "lines": [
           null,
@@ -729,37 +756,9 @@
           null,
           null
         ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/home_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/likes_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1643967910
+    "timestamp": 1644055212
   },
   "Unit Tests": {
     "coverage": {
@@ -812,8 +811,6 @@
           1,
           null,
           1,
-          1,
-          null,
           1,
           null,
           null
@@ -878,6 +875,7 @@
           null,
           null,
           null,
+          1,
           null
         ]
       },
@@ -1035,29 +1033,18 @@
       "/Users/hirabayashinaoki/Public/programming/botti_now/test/system/posts_test.rb": {
         "lines": [
           1,
-          null,
-          1,
-          1,
           1,
           null,
           1,
           1,
           null,
-          1,
           null,
           1,
           null,
-          1,
           null,
-          1,
-          null,
-          1,
-          0,
           null,
           null,
           1,
-          1,
-          null,
           1,
           null,
           1,
@@ -1070,9 +1057,60 @@
           1,
           null,
           null,
-          0,
+          1,
+          1,
           null,
-          0,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -1083,15 +1121,15 @@
           null,
           1,
           null,
-          0,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
-          0,
+          1,
           null,
-          0,
+          1,
           null,
           null
         ]
@@ -1141,47 +1179,6 @@
           null
         ]
       },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/home_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          4,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/helpers/application_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          26,
-          26,
-          null,
-          null
-        ]
-      },
       "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/posts_controller.rb": {
         "lines": [
           null,
@@ -1227,6 +1224,36 @@
           null
         ]
       },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          4,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          26,
+          26,
+          null,
+          null
+        ]
+      },
       "/Users/hirabayashinaoki/Public/programming/botti_now/app/decorators/post_decorator.rb": {
         "lines": [
           null,
@@ -1239,18 +1266,18 @@
           null,
           null,
           1,
-          9,
-          9,
+          11,
+          11,
           null,
-          9,
-          9,
+          11,
+          11,
           null,
           null,
           null,
           null,
           null,
           1,
-          28,
+          34,
           null,
           null
         ]
@@ -1271,16 +1298,15 @@
           null,
           null,
           1,
-          0,
+          2,
+          null,
+          2,
+          2,
+          2,
+          2,
           null,
           0,
-          0,
-          0,
-          0,
           null,
-          0,
-          null,
-          0,
           0,
           0,
           null,
@@ -1301,7 +1327,7 @@
           null,
           null,
           1,
-          0,
+          2,
           null,
           null,
           null,
@@ -1319,6 +1345,17 @@
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/home_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
           null
         ]
       },
@@ -1340,6 +1377,6 @@
         ]
       }
     },
-    "timestamp": 1643898903
+    "timestamp": 1644055205
   }
 }
