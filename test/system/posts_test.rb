@@ -80,7 +80,7 @@ class PostsTest < ApplicationSystemTestCase
   end
 
   # 新たにセッションを作成し、渡されたブロックの処理を行った後、元のセッションに戻る
-  # https://techracho.bpsinc.jp/hachi8833/2018_02_27/52183を参考に実装
+  # @see https://techracho.bpsinc.jp/hachi8833/2018_02_27/52183
   def within_session(name)
     old_session_name = Capybara.session_name
     Capybara.session_name = name.to_sym

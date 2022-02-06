@@ -573,6 +573,124 @@
           null
         ]
       },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/home_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          7,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/likes_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/posts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          8,
+          7,
+          7,
+          null,
+          8,
+          null,
+          null,
+          1,
+          4,
+          null,
+          4,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/decorators/post_decorator.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          19,
+          19,
+          null,
+          19,
+          19,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          35,
+          null,
+          null
+        ]
+      },
       "/Users/hirabayashinaoki/Public/programming/botti_now/app/jobs/chaplus_api_job.rb": {
         "lines": [
           null,
@@ -638,127 +756,9 @@
           null,
           null
         ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          7,
-          2,
-          2,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/decorators/post_decorator.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          19,
-          19,
-          null,
-          19,
-          19,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          52,
-          null,
-          null
-        ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/home_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/likes_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/posts_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          8,
-          7,
-          7,
-          null,
-          8,
-          null,
-          null,
-          1,
-          4,
-          null,
-          4,
-          2,
-          2,
-          null,
-          null,
-          null,
-          null,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          4,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1644055212
+    "timestamp": 1644131418
   },
   "Unit Tests": {
     "coverage": {
@@ -1277,8 +1277,36 @@
           null,
           null,
           1,
-          34,
+          23,
           null,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/likes_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/home_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
           null
         ]
       },
@@ -1347,36 +1375,8 @@
           null,
           null
         ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/home_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/hirabayashinaoki/Public/programming/botti_now/app/controllers/likes_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1644055205
+    "timestamp": 1644131437
   }
 }
