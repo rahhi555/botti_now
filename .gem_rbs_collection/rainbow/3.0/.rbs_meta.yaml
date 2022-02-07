@@ -1,6 +1,6 @@
 ---
-name: rack
-version: 2.2.2
+name: rainbow
+version: '3.0'
 source:
   type: git
   name: ruby/gem_rbs_collection

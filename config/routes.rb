@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :likes, only: %i[create delete]
   end
 
+  resources :ranking, only: [:index]
+
   if Rails.env.development?
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'

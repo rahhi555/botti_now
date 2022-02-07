@@ -86,6 +86,23 @@ class Post < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
+  attr_accessor bot_message(): String?
+  def bot_message_changed?: () -> bool
+  def bot_message_change: () -> [ String?, String? ]
+  def bot_message_will_change!: () -> void
+  def bot_message_was: () -> String?
+  def bot_message_previously_changed?: () -> bool
+  def bot_message_previous_change: () -> Array[String?]?
+  def bot_message_previously_was: () -> String?
+  def bot_message_before_last_save: () -> String?
+  def bot_message_change_to_be_saved: () -> Array[String?]?
+  def bot_message_in_database: () -> String?
+  def saved_change_to_bot_message: () -> Array[String?]?
+  def saved_change_to_bot_message?: () -> bool
+  def will_save_change_to_bot_message?: () -> bool
+  def restore_bot_message!: () -> void
+  def clear_bot_message_change: () -> void
+
   def likes: () -> Like::ActiveRecord_Associations_CollectionProxy
   def likes=: (Like::ActiveRecord_Associations_CollectionProxy | Array[Like]) -> (Like::ActiveRecord_Associations_CollectionProxy | Array[Like])
   def like_ids: () -> Array[Integer]

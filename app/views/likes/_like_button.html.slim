@@ -1,9 +1,9 @@
-div id=dom_id(post, :like) class='flex justify-between items-end'
+div id=dom_id(post, :like) class='flex justify-between items-end text-xs sm:text-sm'
   = "いいね！#{post.likes.length}"
 
   .row-start-3.col-start-3.inline-block
     - if post.current_user_liked?(user)
-      .like-btn-base.text-white.bg-pink-500
+      .like-btn-base.text-white.bg-pink-500.w-6.sm:w-8.h-6.sm:h-8
         svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"
 
@@ -11,7 +11,7 @@ div id=dom_id(post, :like) class='flex justify-between items-end'
       = button_to post_likes_path(post), \
                   params: { post: { like: post.likes.length + 1 } }, \
                   disabled: true, \
-                  class: 'like-btn-base text-white bg-green-600 cursor-pointer' do
+                  class: 'like-btn-base text-white bg-green-600 cursor-pointer w-6 sm:w-8 h-6 sm:h-8' do
         svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           path[stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 \

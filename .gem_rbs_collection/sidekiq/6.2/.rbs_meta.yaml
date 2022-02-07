@@ -1,6 +1,6 @@
 ---
-name: rack
-version: 2.2.2
+name: sidekiq
+version: '6.2'
 source:
   type: git
   name: ruby/gem_rbs_collection

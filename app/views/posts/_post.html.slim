@@ -1,17 +1,18 @@
 div[id=dom_id(post)
-  class="absolute top-0 bg-white py-4 px-16 rounded-full opacity-0 drop-shadow-xl \
+  class="absolute top-0 bg-white sm:py-4 sm:px-16 py-2 px-8 rounded-full opacity-0 drop-shadow-xl \
           #{'hover:border-rose-600 border-2 cursor-pointer' unless post.current_user_liked?(user)}"
   data-controller="likes"
   data-action="animationend->posts#removeSelf"
   onpointerdown="this.querySelector('form')?.requestSubmit()"
   style="#{post.bubble_style} will-change: transform, opacity;"]
 
-  = "#{time_ago_in_words(post.created_at)}前"
+  p.text-xs
+    = "#{time_ago_in_words(post.created_at)}前"
 
-  .w-44.break-words
+  p.w-28.sm:w-44.text-sm.sm:text-base.break-words
     = post.message
 
-  .text-gray-700
+  p.text-gray-700.text-sm.sm:text-base
     = post.bot_message
 
   = render('likes/like_button', { post:, user: })

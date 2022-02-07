@@ -1,0 +1,7 @@
+tr.flex.flex-col.flex-nowrap.mb-2.sm:table-row.sm:mb-0s style="width: 1000px;"
+  td.border.hover:bg-gray-100.p-3.sm:w-1 = post_counter + 1
+  td.border.hover:bg-gray-100.p-3.sm:w-2/12 = post.user.name
+  td.border.hover:bg-gray-100.p-3.sm:w-4/12 = post.message
+  td.border.hover:bg-gray-100.p-3.sm:w-4/12 = post.bot_message
+  td.border.hover:bg-gray-100.p-3.sm:w-1/12 = post.likes.length
+  td.border.hover:bg-gray-100.p-3.sm:w-1/12 = "#{time_ago_in_words(post.created_at)}前"

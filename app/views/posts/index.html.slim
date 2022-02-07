@@ -7,10 +7,10 @@
 #posts data-controller="posts"
   = render partial: 'posts/post', collection: @posts, locals: { user: current_user }
 
-div id="tweet-form" class="fixed bottom-0 w-full" data-controller="posts error-messages"
+div id="tweet-form" class="absolute bottom-0 w-full" data-controller="posts error-messages"
   = form_with model: Post.new, \
               data: { action: "turbo:submit-end->posts#clearForm turbo:submit-start->error-messages#clearErrorMessages" }, \
-              class: %w[w-full max-w-2xl px-6 py-4 mx-auto bg-white/75 rounded-md shadow-md dark:bg-gray-800] \
+              class: %w[w-full max-w-2xl sm:px-6 sm:py-4 mx-auto bg-white/75 rounded-md shadow-md dark:bg-gray-800] \
               do |f|
 
     = render 'shared/error_messages', object: f.object
@@ -24,6 +24,8 @@ div id="tweet-form" class="fixed bottom-0 w-full" data-controller="posts error-m
                                         focus:ring-opacity-40 resize-none]
       = f.submit 'つぶやく', class: %w[text-white transition-colors duration-200 transform bg-gray-700 \
                                       rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 block mx-auto]
+
+= link_to 'ランキング', ranking_index_path
 
 css:
   /* つぶやきを泡のように出現、消滅させる */

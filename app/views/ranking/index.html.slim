@@ -1,0 +1,45 @@
+.flex.w-full.flex-col
+  | ランキング
+  table.w-full.flex.flex-row.flex-no-wrap.bg-gray-50.sm:bg-white.rounded-lg.sm:shadow-lg.my-5.sm:h-4/5
+    thead.text-white.sm:block
+      - @posts.length.times do
+        tr.bg-teal-400.flex.flex-col.flex-nowrap.mb-2.sm:block.rounded-l-lg.sm:rounded-none.sm:mb-0.sm:w-full
+          th.p-3.text-left.sm:inline-block.sm:w-1/12 No
+          th.p-3.text-left.sm:inline-block.sm:w-2/12 名前
+          th.p-3.text-left.sm:inline-block.sm:w-3/12 メッセージ
+          th.p-3.text-left.sm:inline-block.sm:w-4/12 ぼっちわんからの返信
+          th.p-3.text-left.sm:inline-block.sm:w-1/12 いいね
+          th.p-3.text-left.sm:inline-block.sm:w-1/12 投稿日時
+    tbody.flex-1.overflow-x-scroll.sm:block.sm:overflow-y-scroll.sm:overflow-x-hidden
+      = render partial: 'ranking/post', collection: @posts
+
+css:
+   @media (min-width: 640px) {
+       table {
+          display: table !important;
+       }
+
+       thead tr:not(:first-child) {
+          display: none;
+       }
+
+       tbody {
+           height: 90%;
+       }
+
+       main {
+           background-color: transparent !important;
+       }
+   }
+
+   td:last-child {
+       border: 0;
+   }
+
+   th:not(:last-child) {
+       border-bottom: 2px solid rgba(0, 0, 0, .1);
+   }
+
+   main {
+       background-color: white;
+   }
