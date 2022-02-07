@@ -6,3 +6,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+user = User.create!
+100.times do |i|
+  Post.create!(user:, message: "message_ #{i}", bot_message: "bot_message_#{i}")
+end

@@ -4,10 +4,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   include ApplicationHelper
   include ActiveJob::TestHelper
 
-  test 'indexではpostの一覧が反ること' do
+  test 'indexでは最大10個の投稿が返ってくること' do
     get posts_url
     assert_response :success
-    assert_equal 2, controller.view_assigns['posts'].length
+    assert_not_equal Post.count, 10
+    assert_equal 10, controller.view_assigns['posts'].length
   end
 
   test 'indexにアクセスすると新たにユーザーが作成され、再びアクセスした場合はユーザーが作成されない' do

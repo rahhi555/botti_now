@@ -8,7 +8,13 @@ class PostsController < ApplicationController
       @current_user = User.create!
       session[:user_id] = @current_user.id
     end
-    @posts = Post.all.includes(:likes)
+
+    @posts = Post.page(1).includes(:likes)
+  end
+
+  def load
+    @posts = Post.page(params[:page]).includes(:likes)
+    turbo_stream
   end
 
   def create

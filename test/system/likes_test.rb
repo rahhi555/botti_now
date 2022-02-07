@@ -2,8 +2,8 @@ require "application_system_test_case"
 
 class LikesTest < ApplicationSystemTestCase
   test 'ツイートをクリックするといいねされること' do
-    # 要素が複数あると被ってクリックできなくなるので片方削除
-    posts(:two).destroy
+    # 要素が複数あると被ってクリックできなくなるので、posts(:one)を残して削除
+    Post.where.not(id: posts(:one).id).destroy_all
 
     visit posts_url
 

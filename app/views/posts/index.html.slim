@@ -1,6 +1,9 @@
 = turbo_stream_from 'tweet_page'
 = turbo_stream_from current_user
 
+/ ページネーション用の見えないリンク
+= render 'posts/paginate'
+
 #posts data-controller="posts"
   = render partial: 'posts/post', collection: @posts, locals: { user: current_user }
 

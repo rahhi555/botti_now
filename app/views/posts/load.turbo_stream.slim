@@ -1,0 +1,2 @@
+= turbo_stream.append 'posts', partial: 'posts/post', collection: @posts, locals: { user: current_user }
+= turbo_stream.replace 'paginate-link', partial: 'posts/paginate'

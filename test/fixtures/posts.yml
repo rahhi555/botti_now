@@ -7,3 +7,9 @@ one:
 two:
   message: メッセージ２
   user: two
+
+<% 1.upto(10) do |i| %>
+post_list_<%= i %>:
+  message: guy_<%= i %>
+  user: one
+<% end %>

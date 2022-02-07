@@ -4,6 +4,11 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   removeSelf({ target }) {
     target.parentNode.removeChild(target)
+
+    if(!this.element.childElementCount) {
+      const paginateLink = document.getElementById('paginate-link')
+      paginateLink?.click()
+    }
   }
 
   clearForm({ target }) {
