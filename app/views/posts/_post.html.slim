@@ -1,5 +1,5 @@
 div[id=dom_id(post)
-  class="absolute top-0 bg-white sm:py-4 sm:px-16 py-2 px-8 rounded-full opacity-0 drop-shadow-xl \
+  class="fixed top-0 bg-white sm:py-4 sm:px-16 py-2 px-8 rounded-full opacity-0 drop-shadow-xl \
           #{'hover:border-rose-600 border-2 cursor-pointer' unless post.current_user_liked?(user)}"
   data-controller="likes"
   data-action="animationend->posts#removeSelf"

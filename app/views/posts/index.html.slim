@@ -2,7 +2,10 @@
 = turbo_stream_from current_user
 
 / ページネーション用の見えないリンク
-= render 'posts/paginate'
+span.hidden
+  = render partial: 'shared/next_page', object: @posts
+
+= render partial: 'posts/login_announce', locals: { user: current_user, me: true }
 
 #posts data-controller="posts"
   = render partial: 'posts/post', collection: @posts, locals: { user: current_user }
@@ -25,7 +28,7 @@ div id="tweet-form" class="absolute bottom-0 w-full" data-controller="posts erro
       = f.submit 'つぶやく', class: %w[text-white transition-colors duration-200 transform bg-gray-700 \
                                       rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600 block mx-auto]
 
-= link_to 'ランキング', ranking_index_path
+= link_to 'ランキング', ranking_index_path, class: "flex justify-center px-4 py-2 absolute top-0 left-0 w-28 sm:w-32 text-sm sm:text-base btn-primary"
 
 css:
   /* つぶやきを泡のように出現、消滅させる */
@@ -42,4 +45,8 @@ css:
           opacity: 0;
           transform: translateY(0px);
       }
+  }
+
+  main {
+      overflow: hidden;
   }

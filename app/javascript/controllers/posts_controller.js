@@ -6,7 +6,7 @@ export default class extends Controller {
     target.parentNode.removeChild(target)
 
     if(!this.element.childElementCount) {
-      const paginateLink = document.getElementById('paginate-link')
+      const paginateLink = document.getElementById('paginate_link')
       paginateLink?.click()
     }
   }

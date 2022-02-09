@@ -1,0 +1,25 @@
+#login_announce
+  inline-block.rounded-full.bg-gray-300.pr-5.h-16.fixed.top-40.left-20.opacity-0.shadow-md style="line-height: 3.75rem; animation: login_announce 7s"
+    img.rounded-full.float-left.h-full src="https://randomuser.me/api/portraits/women/34.jpg" /
+    span.text-xs.sm:text-sm.ml-3 = me ? "ようこそ #{user.name} さん" : "#{user.name} さんがやってきました"
+
+  .rounded-full.py-1.px-4.font-medium.border.text-green-900.bg-green-100.border-green-300.absolute.top-20.left-0
+    = "現在#{current_connection_length}人と繋がっています"
+
+css:
+  @keyframes login_announce {
+      0% {
+          opacity: 0;
+          transform: translateX(-100px);
+      }
+
+      50% {
+          opacity: 1;
+          transform: translateX(0px);
+      }
+
+      100% {
+          opacity: 0;
+          transform: translateX(-100px);
+      }
+  }

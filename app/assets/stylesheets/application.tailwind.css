@@ -5,13 +5,14 @@
 
 @layer components {
     .btn-primary {
-        background-color: #E66EB2;
-        color: #003B4A;
+        background-color: rgb(236 72 153);;
+        color: white;
         font-weight: bold;
         border: #E66EB2 solid 3px;
         border-radius: 9999px;
         text-align: center;
         line-height: 4rem;
+        cursor: pointer;
     }
 
     .btn-primary:hover {

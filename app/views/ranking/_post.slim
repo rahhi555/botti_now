@@ -1,7 +1,11 @@
 tr.flex.flex-col.flex-nowrap.mb-2.sm:table-row.sm:mb-0s style="width: 1000px;"
-  td.border.hover:bg-gray-100.p-3.sm:w-1 = post_counter + 1
-  td.border.hover:bg-gray-100.p-3.sm:w-2/12 = post.user.name
+  td.border.hover:bg-gray-100.p-3.sm:w-1 = post_counter + 1 + @posts.prev_page.to_i * 10
+  td.border.hover:bg-gray-100.p-3.sm:w-2/12
+    = post.user.name
+    - if current_user.name == post.user.name
+      span class="inline-flex items-center justify-center px-2 py-1 ml-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full"
+        | あなた
   td.border.hover:bg-gray-100.p-3.sm:w-4/12 = post.message
   td.border.hover:bg-gray-100.p-3.sm:w-4/12 = post.bot_message
-  td.border.hover:bg-gray-100.p-3.sm:w-1/12 = post.likes.length
+  td.border.hover:bg-gray-100.p-3.sm:w-1/12 = post.like_count
   td.border.hover:bg-gray-100.p-3.sm:w-1/12 = "#{time_ago_in_words(post.created_at)}前"

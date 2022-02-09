@@ -1,0 +1,5 @@
+/ @param [ActiveRecord_Relation] object pageを付与したActiveRecord_Relationオブジェクト
+= link_to_next_page next_page, \
+                    'もっと見る', \
+                    params: { controller: controller_name, action: 'load' }, \
+                    data: { turbo_method: :post }, id: 'paginate_link'

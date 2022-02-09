@@ -10,8 +10,8 @@ module PostDecorator
   def bubble_style
     duration = rand(15..25)
     left = rand(0..70)
-    delay = (Time.current - created_at) < 10 ? 0 : rand(1..40)
-    # delay = (Time.current - created_at) < 10 ? 0 : rand(1..10)
+    # delay = (Time.current - created_at) < 10 ? 0 : rand(1..40)
+    delay = (Time.current - created_at) < 10 ? 0 : rand(1..10)
     "animation: tweet-bubble #{duration}s #{delay}s; left: #{left}vw;"
   end
 

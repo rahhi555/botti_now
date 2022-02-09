@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :likes, only: %i[create delete]
   end
 
+  post '/ranking/load', to: 'ranking#load'
   resources :ranking, only: [:index]
 
   if Rails.env.development?

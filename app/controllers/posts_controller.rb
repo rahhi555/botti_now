@@ -9,11 +9,15 @@ class PostsController < ApplicationController
       session[:user_id] = @current_user.id
     end
 
-    @posts = Post.page(1).includes(:likes)
+    Turbo::StreamsChannel.broadcast_replace_to('tweet_page',
+                                               target: 'login_announce',
+                                               partial: 'posts/login_announce',
+                                               locals: { user: current_user, me: false })
+    @posts = Post.desc_likes_count.includes(:likes).page(1)
   end
 
   def load
-    @posts = Post.page(params[:page]).includes(:likes)
+    @posts = Post.desc_likes_count.includes(:likes).page(params[:page])
     turbo_stream
   end
 
