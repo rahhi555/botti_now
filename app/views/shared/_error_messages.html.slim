@@ -1,6 +1,6 @@
-#error_messages data-error-messages-target='errorMessages'
+#error_messages
   - if object.errors.any?
-    .text-red-700
+    .text-red-700 data-form-target='errorMessages'
       ul.mb-0
         - object.errors.full_messages.each do |message|
           li

@@ -1,18 +1,18 @@
 = turbo_stream_from 'tweet_page'
 = turbo_stream_from current_user
 
-/ ページネーション用の見えないリンク
-span.hidden
-  = render partial: 'shared/next_page', object: @posts
-
 = render partial: 'posts/login_announce', locals: { user: current_user, me: true }
 
-#posts data-controller="posts"
-  = render partial: 'posts/post', collection: @posts, locals: { user: current_user }
+div data-controller="paginate"
+  #posts
+    = render partial: 'posts/post', collection: @posts, locals: { user: current_user }
+  span.hidden
+    = render partial: 'shared/next_page', object: @posts
 
-div id="tweet-form" class="absolute bottom-0 w-full" data-controller="posts error-messages"
+
+div id="tweet-form" class="absolute bottom-0 w-full"
   = form_with model: Post.new, \
-              data: { action: "turbo:submit-end->posts#clearForm turbo:submit-start->error-messages#clearErrorMessages" }, \
+              data: { controller: "form", action: "turbo:submit-start->form#clearErrorMessages turbo:submit-end->form#clearForm" }, \
               class: %w[w-full max-w-2xl sm:px-6 sm:py-4 mx-auto bg-white/75 rounded-md shadow-md dark:bg-gray-800] \
               do |f|
 
