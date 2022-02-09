@@ -1,2 +1,2 @@
 = turbo_stream.append 'posts', partial: 'posts/post', collection: @posts, locals: { user: current_user }
-= turbo_stream.replace 'paginate_link', partial: 'shared/next_page', object: @posts
+= turbo_stream.replace 'next_page_link', partial: 'shared/next_page', object: @posts
