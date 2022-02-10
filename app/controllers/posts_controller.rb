@@ -16,11 +16,6 @@ class PostsController < ApplicationController
     @posts = Post.desc_likes_count.includes(:likes).page(1)
   end
 
-  def load
-    @posts = Post.desc_likes_count.includes(:likes).page(params[:page])
-    turbo_stream
-  end
-
   def create
     post = current_user.posts.build(post_params)
 
@@ -34,18 +29,19 @@ class PostsController < ApplicationController
       render turbo_stream:
                turbo_stream.replace('error_messages',
                                     partial: 'shared/error_messages',
-                                    locals: { object: post }),
+                                    object: post),
              status: :unprocessable_entity
     end
   end
 
-  def delete; end
-
-  def update; end
+  def load
+    @posts = Post.desc_likes_count.includes(:likes).page(params[:page])
+    turbo_stream
+  end
 
   private
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message, :user_id, :bot_message)
   end
 end

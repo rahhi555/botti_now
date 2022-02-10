@@ -22,7 +22,6 @@ class Post < ApplicationRecord
             posts.id = likes_table.post_id
         JOIN
       )
-      .order(like_count: :desc)
+      .order(like_count: :desc, created_at: :desc)
   }
-
 end

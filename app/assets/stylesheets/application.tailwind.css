@@ -24,4 +24,8 @@
         @apply inline-flex items-center justify-center space-x-2 border border-transparent text-sm font-medium
                 rounded-full w-12 h-12 transition-colors;
     }
+
+    .badge {
+        @apply inline-flex items-center justify-center px-2 py-1 ml-2 text-xs font-bold leading-none rounded-full;
+    }
 }

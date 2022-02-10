@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
   post '/posts/load', to: 'posts#load'
-  resources :posts, only: %i[create index delete update], shallow: true do
+  resources :posts, only: %i[create index], shallow: true do
     resources :likes, only: %i[create delete]
   end
 
   post '/ranking/load', to: 'ranking#load'
-  resources :ranking, only: [:index]
+  resources :ranking, only: %i[index show edit update delete]
 
   if Rails.env.development?
     require 'sidekiq/web'

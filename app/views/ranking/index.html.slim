@@ -15,7 +15,7 @@
           th.p-3.text-left.sm:inline-block.sm:w-1/12 投稿日時
     tbody#ranking_tbody.flex-1.overflow-x-scroll.sm:block.sm:overflow-y-scroll.sm:overflow-x-hidden
       = render partial: 'ranking/post', collection: @posts
-  .absolute.bottom-5.right-10
+  .hidden
     = render partial: 'shared/next_page', object: @posts
 
 css:

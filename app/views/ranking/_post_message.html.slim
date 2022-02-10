@@ -1,0 +1,6 @@
+- if post.mine?(current_user)
+  = turbo_frame_tag dom_id(post) do
+    = post.message
+    = link_to '編集', edit_ranking_path(post), class: 'badge text-yellow-100 bg-yellow-600'
+- else
+  = post.message

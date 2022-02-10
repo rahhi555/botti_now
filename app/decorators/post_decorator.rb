@@ -22,4 +22,10 @@ module PostDecorator
   def current_user_liked?(user)
     likes.pluck(:user_id).include?(user&.id)
   end
+
+  # @param [User] user
+  # @return [Boolean]
+  def mine?(user)
+    user.id == self.user.id
+  end
 end

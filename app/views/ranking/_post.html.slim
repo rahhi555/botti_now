@@ -1,0 +1,16 @@
+tr class='flex flex-col flex-nowrap mb-2 sm:table-row sm:mb-0s' style="width: 1000px;" data-paginate-target=(post_counter + 1 == @posts.limit_value ? 'infiniteScroll' : nil)
+  td.border.hover:bg-gray-100.p-3.sm:w-1
+    = post_counter + 1 + @posts.prev_page.to_i * @posts.limit_value
+  td class="border hover:bg-gray-100 p-3 sm:w-2/12"
+    = post.user.name
+    - if post.mine?(current_user)
+      span.badge.text-red-100.bg-red-600
+        | あなた
+  td class="border hover:bg-gray-100 p-3 sm:w-4/12"
+    = render 'ranking/post_message', post:
+  td class="border hover:bg-gray-100 p-3 sm:w-4/12"
+    = post.bot_message
+  td class="border hover:bg-gray-100 p-3 sm:w-1/12"
+    = post.like_count
+  td class="border hover:bg-gray-100 p-3 sm:w-1/12"
+    = "#{time_ago_in_words(post.created_at)}前"
