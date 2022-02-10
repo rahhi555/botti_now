@@ -8,6 +8,4 @@ class LikesController < ApplicationController
              turbo_stream.replace(view_context.dom_id(post, :like), partial: 'likes/like_button',
                                                                     locals: { post:, user: current_user })
   end
-
-  def delete; end
 end

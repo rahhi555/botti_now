@@ -14,7 +14,6 @@ class RankingController < ApplicationController
   end
 
   def update
-    p params
     post = current_user.posts.find(params[:id])
     if post.update(post_params)
       render partial: 'ranking/post_message', locals: { post: }
@@ -23,7 +22,11 @@ class RankingController < ApplicationController
     end
   end
 
-  def delete; end
+  def destroy
+    post = current_user.posts.find(params[:id])
+    post.destroy!
+    render turbo_stream: turbo_stream.remove(post)
+  end
 
   def load
     @posts = Post.desc_likes_count.includes(:user).page(params[:page]).per(20)

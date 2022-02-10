@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   post '/posts/load', to: 'posts#load'
   resources :posts, only: %i[create index], shallow: true do
-    resources :likes, only: %i[create delete]
+    resources :likes, only: %i[create]
   end
 
   post '/ranking/load', to: 'ranking#load'
-  resources :ranking, only: %i[index show edit update delete]
+  resources :ranking, only: %i[index show edit update destroy]
 
   if Rails.env.development?
     require 'sidekiq/web'

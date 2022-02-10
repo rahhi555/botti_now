@@ -1,4 +1,4 @@
-= turbo_frame_tag dom_id(post)
+= turbo_frame_tag dom_id(post, :message)
   = form_with model: post, url: ranking_path(post), method: :patch do |f|
     = render partial: 'shared/error_messages', object: post
     .flex.items-center.h-20
