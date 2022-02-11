@@ -18,8 +18,6 @@ class PostsTest < ApplicationSystemTestCase
 
     click_button 'つぶやく'
 
-    assert_text 'メッセージを入力してください'
-
     fill_in 'post_message', with: '好きな食べ物は何ですか？'
 
     # ジョブが１つ登録されたことを確認(assertを同じブロックに入れないとジョブ登録の前に判定してしまいエラーになる)

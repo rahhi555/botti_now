@@ -2,7 +2,7 @@
 
 .flex.w-full.flex-col.bg-blue-50.sm:bg-transparent data-controller="paginate"
   div.flex.justify-center
-    = image_tag('/ranking.png', class: 'h-40')
+    = image_tag('ranking.png', class: 'h-40')
   table.w-full.flex.flex-row.flex-no-wrap.bg-gray-50.sm:bg-white.rounded-lg.sm:shadow-lg.my-5.sm:h-4/5
     thead.text-white.sm:block
       - @posts.total_count.times do

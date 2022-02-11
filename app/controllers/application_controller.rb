@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def have_current_user
     unless current_user
-      flash[:danger] = 'なんかエラーおきました(^_^;)ｻｰｾﾝ'
+      flash[:alert] = 'なんかエラーおきました(^_^;)ｻｰｾﾝ'
       redirect_to root_url
     end
   end

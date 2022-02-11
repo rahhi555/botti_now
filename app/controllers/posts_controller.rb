@@ -24,7 +24,7 @@ class PostsController < ApplicationController
       render turbo_stream:
                turbo_stream.replace('bot_message',
                                     partial: 'chaplus_api/message',
-                                    locals: { bot_message: 'うーんとね...' })
+                                    locals: { bot_message: t("bot.loading") })
     else
       render turbo_stream:
                turbo_stream_error_messages(post),

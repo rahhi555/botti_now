@@ -21,3 +21,5 @@ ja:
       like:
         user_id: 'ユーザー'
         post_id: '投稿'
+  bot:
+    loading: 'うーんとね...'

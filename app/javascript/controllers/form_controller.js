@@ -10,7 +10,15 @@ export default class extends Controller {
     this.errorMessagesTarget.parentNode.removeChild(this.errorMessagesTarget)
   }
 
-  clearForm() {
+  // APIから返答があるまで数秒あるので、その間フォームを無効にする
+  disableFewSeconds(event) {
     this.element.reset()
+    // エラーが返ってきた時はフォームを無効にしない
+    if(!event.detail.success) return
+
+    this.element.commit.disabled = true
+    setTimeout(() => {
+      this.element.commit.disabled = false
+    }, 5000)
   }
 }

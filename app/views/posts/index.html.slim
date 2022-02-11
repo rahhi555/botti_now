@@ -13,13 +13,13 @@ div data-controller="paginate"
 div id="tweet-form" class="absolute bottom-0 w-full"
   = form_with model: Post.new, \
               data: { controller: "form", \
-                      action: "turbo:submit-start->form#clearErrorMessages turbo:before-fetch-response->form#clearForm" }, \
+                      action: "turbo:submit-start->form#clearErrorMessages turbo:submit-end->form#disableFewSeconds" }, \
               class: %w[w-full max-w-2xl sm:px-6 sm:py-4 mx-auto bg-white/75 rounded-md shadow-md dark:bg-gray-800] \
               do |f|
 
     = render partial: 'shared/error_messages', object: f.object
 
-    = render 'chaplus_api/message', bot_message: 'こんにちは！'
+    = render 'chaplus_api/message', bot_message: 'こんにちは！何か質問してみんしゃい。'
 
     .flex
       = f.text_area :message, required: true, maxlength: 50,  class: %w[block w-full px-4 py-2 text-gray-700 \
@@ -27,7 +27,8 @@ div id="tweet-form" class="absolute bottom-0 w-full"
         dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 resize-none]
 
       = f.submit 'つぶやく', class: %w[text-white transition-colors duration-200 transform bg-green-700 cursor-pointer \
-                                          rounded-r-lg hover:bg-green-600 focus:outline-none focus:bg-green-600 block mx-auto]
+                                    rounded-r-lg hover:bg-green-600 focus:outline-none focus:bg-green-600 block mx-auto \
+                                    disabled:opacity-75 disabled:cursor-not-allowed]
 
 = link_to 'ランキング', ranking_index_path, class: "flex justify-center px-4 py-2 absolute top-0 left-0 w-28 sm:w-32 text-sm sm:text-base btn-primary"
 
