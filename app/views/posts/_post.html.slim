@@ -5,8 +5,12 @@ div[id=dom_id(post)
   onpointerdown="this.querySelector('form')?.requestSubmit()"
   style="#{post.bubble_style} will-change: transform, opacity;"]
 
-  p.text-xs
-    = "#{time_ago_in_words(post.created_at)}前"
+  - if post.now?
+    p.text-xs.badge.border-2.border-pink-500.text-pink-500
+      | NOW!
+  - else
+    p.text-xs
+      = "#{time_ago_in_words(post.created_at)}前"
 
   p.w-28.sm:w-44.text-sm.sm:text-base.break-words
     = post.message

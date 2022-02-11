@@ -10,5 +10,7 @@ meta[name="viewport" content="width=device-width,initial-scale=1"]
 
 body
 = render 'layouts/background'
-main.h-screen.container.mx-auto.relative.z-10.flex.justify-center
+
+main class="h-screen container mx-auto relative z-10 flex justify-center"
+  = render partial: 'layouts/flash', locals: { **flash_attributes }
   = yield

@@ -28,4 +28,10 @@ module PostDecorator
   def mine?(user)
     user.id == self.user.id
   end
+
+  # @return [Boolean]
+  # 投稿が現在から1分以内かどうかを返す
+  def now?
+    created_at.between?(Time.current.ago(1.minutes), Time.current)
+  end
 end

@@ -1,4 +1,9 @@
 ja:
+  default:
+    message:
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      destroyed: "%{item}を削除しました"
   activerecord:
     models:
       user: 'ユーザー'

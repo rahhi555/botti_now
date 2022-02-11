@@ -1,0 +1,12 @@
+div[id="flash_bar"
+    class="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 absolute top-20 opacity-0 transition-opacity"
+    data-controller="flash" data-flash-has-flash-value="#{flash.present?}"]
+
+  div class="flex items-center justify-center w-12 #{bg}"
+    svg.w-6.h-6.text-white.fill-current viewbox=("0 0 40 40") xmlns="http://www.w3.org/2000/svg"
+      path d=(path)
+
+  .px-4.py-2.-mx-3
+    .mx-3
+      span class="font-semibold #{text}" = title
+      p.text-sm.text-gray-600.dark:text-gray-200 = message

@@ -12,7 +12,8 @@ div data-controller="paginate"
 
 div id="tweet-form" class="absolute bottom-0 w-full"
   = form_with model: Post.new, \
-              data: { controller: "form", action: "turbo:submit-start->form#clearErrorMessages turbo:submit-end->form#clearForm" }, \
+              data: { controller: "form", \
+                      action: "turbo:submit-start->form#clearErrorMessages turbo:before-fetch-response->form#clearForm" }, \
               class: %w[w-full max-w-2xl sm:px-6 sm:py-4 mx-auto bg-white/75 rounded-md shadow-md dark:bg-gray-800] \
               do |f|
 
@@ -21,7 +22,7 @@ div id="tweet-form" class="absolute bottom-0 w-full"
     = render 'chaplus_api/message', bot_message: 'こんにちは！'
 
     .flex
-      = f.text_area :message, maxlength: 50, required: true, class: %w[block w-full px-4 py-2 text-gray-700 \
+      = f.text_area :message, required: true, maxlength: 50,  class: %w[block w-full px-4 py-2 text-gray-700 \
         bg-white/75 border rounded-l-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 \
         dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 resize-none]
 

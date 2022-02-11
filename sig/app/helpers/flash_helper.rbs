@@ -1,0 +1,5 @@
+module FlashHelper
+  # @return [Hash{ Symbol => String }]
+  # flashのタイプに応じたハッシュを返す
+  def flash_attributes: () -> { bg: String, text: String, title: String, message: String, path: String }
+end

@@ -27,9 +27,7 @@ class PostsController < ApplicationController
                                     locals: { bot_message: 'うーんとね...' })
     else
       render turbo_stream:
-               turbo_stream.replace('error_messages',
-                                    partial: 'shared/error_messages',
-                                    object: post),
+               turbo_stream_error_messages(post),
              status: :unprocessable_entity
     end
   end
