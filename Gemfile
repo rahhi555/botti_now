@@ -34,7 +34,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rbs_rails'
   gem 'web-console'
   gem 'slim_lint'
 end
