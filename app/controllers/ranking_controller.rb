@@ -1,7 +1,7 @@
 class RankingController < ApplicationController
 
   def index
-    @posts = Post.desc_likes_count.includes(:user).page(1).per(20)
+    @posts = Post.desc_likes_count.includes(:user, :likes).page(1).per(20)
   end
 
   def show
@@ -36,7 +36,7 @@ class RankingController < ApplicationController
   end
 
   def load
-    @posts = Post.desc_likes_count.includes(:user).page(params[:page]).per(20)
+    @posts = Post.desc_likes_count.includes(:user, :likes).page(params[:page]).per(20)
     turbo_stream
   end
 

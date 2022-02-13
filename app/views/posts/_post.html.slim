@@ -1,9 +1,11 @@
+- post_counter ||= 0
+
 div[id=dom_id(post)
   class="fixed top-0 bg-white sm:py-4 sm:px-16 py-2 px-8 rounded-full opacity-0 drop-shadow-xl \
           #{'hover:border-rose-600 border-2 cursor-pointer' unless post.current_user_liked?(user)}"
   data-action="animationend->paginate#postRemoveSelf"
   onpointerdown="this.querySelector('form')?.requestSubmit()"
-  style="#{post.bubble_style} will-change: transform, opacity;"]
+  style="#{post.bubble_style(post_counter)} will-change: transform, opacity;"]
 
   - if post.now?
     p.text-xs.badge.border-2.border-pink-500.text-pink-500

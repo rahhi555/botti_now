@@ -10,13 +10,13 @@ class PostDecoratorTest < ActiveSupport::TestCase
 
   test '直近に作成されたpostの場合、bubble_styleのdelayが0であること' do
     @post.save!
-    assert_match /tweet-bubble \d{1,2}s 0s/, @post.reload.bubble_style
+    assert_match /tweet-bubble .+s 0s/, @post.reload.bubble_style(0)
   end
 
   test '以前に作成されたpostの場合、bubble_styleのdelayは0以外であること' do
     travel_to Time.current - 30 do
       @post.save!
     end
-    assert_match /tweet-bubble \d{1,2}s [^0]\d?s/, @post.reload.bubble_style
+    assert_match /tweet-bubble .+s .+s/, @post.reload.bubble_style(0)
   end
 end

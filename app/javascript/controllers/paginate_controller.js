@@ -10,7 +10,7 @@ export default class extends Controller {
     const parentNode = target.parentNode
     parentNode.removeChild(target)
 
-    if(!parentNode.childElementCount) {
+    if(parentNode.childElementCount < 2) {
       this.nextPageFetch()
     }
   }

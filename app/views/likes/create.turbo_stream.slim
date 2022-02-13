@@ -1,0 +1,9 @@
+- if request.referer.include?('/posts')
+  = turbo_stream.replace( dom_id(@post, :like), \
+                          partial: 'likes/like_button',  \
+                          locals: { post: @post, user: current_user })
+
+- elsif request.referer.include?('/ranking')
+  = turbo_stream.replace( dom_id(@post, :ranking_good_btn), \
+                          partial: 'ranking/good_btn', \
+                          locals: { post: @post, user: current_user })

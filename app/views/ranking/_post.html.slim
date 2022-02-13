@@ -15,6 +15,6 @@ tr[id=dom_id(post)
   td class="border hover:bg-gray-100 p-3 sm:w-4/12"
     = post.bot_message
   td class="border hover:bg-gray-100 p-3 sm:w-1/12"
-    = post.like_count
+    = render 'ranking/good_btn', post:, user: current_user
   td class="border hover:bg-gray-100 p-3 sm:w-1/12"
     = "#{time_ago_in_words(post.created_at)}前"

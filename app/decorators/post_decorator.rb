@@ -3,14 +3,15 @@
 module PostDecorator
   include ApplicationHelper
 
+  # @param [Integer] post_counter
   # @return [String]
   # ツイートのふわっと浮き上がるアニメーションスタイルを返す。
-  # その際アニメーションの全体の時間(duration),アニメーションが始まる時間(delay)及び画面の配置(left)は初期値はランダムで決まる。
-  # ただしdelayに関しては作成直後のものはすぐ表示される。
-  def bubble_style
-    duration = rand(15..25)
+  # その際アニメーションの全体の時間(duration)及び画面の配置(left)は初期値はランダムで決まる。
+  # ただしdelayに関しては作成直後のものはすぐ表示され、それ以外は順番に表示される。
+  def bubble_style(post_counter)
+    duration = rand(13..18)
     left = rand(0..70)
-    delay = (Time.current - created_at) < 10 ? 0 : rand(1..40)
+    delay = (Time.current - created_at) < 10 ? 0 : (post_counter + 1) * 3 + rand(0.1..2.0)
     "animation: tweet-bubble #{duration}s #{delay}s; left: #{left}vw;"
   end
 

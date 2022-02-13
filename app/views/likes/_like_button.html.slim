@@ -9,7 +9,6 @@ div id=dom_id(post, :like) class='flex justify-between items-end text-xs sm:text
 
     - else
       = button_to post_likes_path(post), \
-                  params: { post: { like: post.likes.length + 1 } }, \
                   disabled: true, \
                   class: 'like-btn-base text-white bg-green-600 cursor-pointer w-6 sm:w-8 h-6 sm:h-8' do
         svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
