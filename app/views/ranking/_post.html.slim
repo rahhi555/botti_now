@@ -12,7 +12,7 @@ tr[id=dom_id(post)
         | あなた
   td class="border hover:bg-gray-100 p-3 sm:w-4/12"
     = render 'ranking/post_message', post:
-  td class="border hover:bg-gray-100 p-3 sm:w-4/12"
+  td class="border hover:bg-gray-100 p-3 sm:w-4/12 text-ellipsis sm:text-clip whitespace-nowrap sm:whitespace-normal"
     = post.bot_message
   td class="border hover:bg-gray-100 p-3 sm:w-1/12"
     = render 'ranking/good_btn', post:, user: current_user
