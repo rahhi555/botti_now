@@ -12,10 +12,11 @@ div[id=dom_id(post)
     p.text-xs
       = "#{time_ago_in_words(post.created_at)}前"
 
-  p.w-28.sm:w-44.text-sm.sm:text-base.break-words
+  p.w-28.sm:w-44.text-sm.sm:text-base.break-word style="margin-top: 0.1rem"
     = post.message
 
-  p.text-gray-700.text-sm.sm:text-base
+  p.text-gray-700.text-sm.sm:text-base.flex style="margin-top: 0.1rem"
+    = image_tag('botti-wan.jpg', class: 'object-cover w-5 h-5 rounded-full border')
     = post.bot_message
 
   = render('likes/like_button', { post:, user: })
