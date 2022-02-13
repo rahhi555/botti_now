@@ -25,3 +25,14 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+# @param [Integer] create_count 何行投稿を作成するか
+# 引数分の投稿を作成する
+def create_list_post(create_count)
+  result = User.insert_all!([{ name: 'dummy' }] * create_count)
+  # @type var rows: Array[{ id: String, message: 'dummy text' }]
+  rows = result.flat_map do |row|
+    { user_id: row['id'], message: 'dummy text' }
+  end
+  Post.insert_all!(rows)
+end

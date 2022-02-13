@@ -1,4 +1,5 @@
 class RankingController < ApplicationController
+
   def index
     @posts = Post.desc_likes_count.includes(:user).page(1).per(20)
   end
@@ -23,7 +24,7 @@ class RankingController < ApplicationController
       ]
     else
       flash.now[:alert] = t("default.message.not_updated", item: Post.model_name.human)
-      render turbo_stream: [turbo_stream_flash, turbo_stream_error_messages(post)]
+      render turbo_stream: [turbo_stream_flash, turbo_stream_error_messages(post)], status: :unprocessable_entity
     end
   end
 

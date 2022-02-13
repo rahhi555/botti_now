@@ -7,8 +7,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'indexでは最大10個の投稿が返ってくること' do
     get posts_url
     assert_response :success
-    assert_not_equal Post.count, 10
-    assert_equal 10, controller.view_assigns['posts'].length
+    assert_operator Post.count, :>, Kaminari.config.default_per_page
+    assert_equal Kaminari.config.default_per_page, controller.view_assigns['posts'].length
   end
 
   test 'indexにアクセスすると新たにユーザーが作成され、再びアクセスした場合はユーザーが作成されない' do
@@ -59,8 +59,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  # test "should get update" do
-  #   get posts_update_url
-  #   assert_response :success
-  # end
+  test 'loadアクションが正常に動作すること' do
+    get posts_url
+    assert_operator Post.count, :>, Kaminari.config.default_per_page
+    post posts_load_path, params: { page: 2 }, headers: { Accept: 'text/vnd.turbo-stream.html' }
+    assert_response :success
+    assert_equal Post.count - Kaminari.config.default_per_page, controller.view_assigns['posts'].length
+  end
 end
