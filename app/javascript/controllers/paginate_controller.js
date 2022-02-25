@@ -5,12 +5,12 @@ import { useIntersection } from 'stimulus-use'
 export default class extends Controller {
   static targets = ['nextPageLink', 'infiniteScroll']
 
-  // postsコントローラーのみのメソッド。アニメーションが終わったツイートを削除し、対象が画面に存在する最後のツイートだった場合はページネーションする
+  // postsコントローラーのみのメソッド。アニメーションが終わったツイートを削除し、画面に表示されているツイートが少なければページネーションする
   postRemoveSelf({ target }) {
     const parentNode = target.parentNode
     parentNode.removeChild(target)
 
-    if(parentNode.childElementCount < 2) {
+    if(parentNode.childElementCount < 4) {
       this.nextPageFetch()
     }
   }

@@ -36,8 +36,11 @@ css:
   /* つぶやきを泡のように出現、消滅させる */
   @keyframes tweet-bubble {
       0% {
-          opacity: .5;
+          opacity: 0;
           transform: translateY(80vh);
+      }
+      5% {
+          opacity: 0;
       }
       80% {
           opacity: 1;

@@ -1,9 +1,0 @@
----
-name: parallel
-version: '1.20'
-source:
-  type: git
-  name: ruby/gem_rbs_collection
-  revision: c5ac4317f25c754fd670b1aa5d4cc133a5441c9a
-  remote: https://github.com/ruby/gem_rbs_collection.git
-  repo_dir: gems

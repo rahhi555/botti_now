@@ -219,4 +219,5 @@ yarn-debug.log*
 
 *.rdb
 
+.gem_rbs_collection
 
