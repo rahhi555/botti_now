@@ -1,0 +1,4 @@
+# The job that powers all the <tt>broadcast_$action_later</tt> broadcasts available in <tt>Turbo::Streams::Broadcasts</tt>.
+class Turbo::Streams::ActionBroadcastJob < ActiveJob::Base
+  def perform: (untyped stream, action: untyped action, target: untyped target, **untyped rendering) -> untyped
+end

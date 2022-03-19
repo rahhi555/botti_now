@@ -1,0 +1,9 @@
+module Turbo
+  extend ActiveSupport::Autoload
+
+  attr_writer self.signed_stream_verifier_key: untyped
+
+  def self.signed_stream_verifier: () -> untyped
+
+  def self.signed_stream_verifier_key: () -> untyped
+end

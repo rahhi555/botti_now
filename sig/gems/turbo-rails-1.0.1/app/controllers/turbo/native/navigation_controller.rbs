@@ -1,0 +1,7 @@
+class Turbo::Native::NavigationController < ActionController::Base
+  def recede: () -> untyped
+
+  def refresh: () -> untyped
+
+  def resume: () -> untyped
+end

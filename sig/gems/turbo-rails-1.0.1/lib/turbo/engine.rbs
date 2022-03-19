@@ -1,0 +1,27 @@
+module Turbo
+  class Engine < Rails::Engine
+    # If you don't want to precompile Turbo's assets (eg. because you're using webpack),
+    # you can do this in an intiailzer:
+    #
+    # config.after_initialize do
+    #   config.assets.precompile -= Turbo::Engine::PRECOMPILE_ASSETS
+    # end
+    PRECOMPILE_ASSETS: ::Array[untyped]
+
+    include Turbo::Streams::TurboStreamsTagBuilder
+
+    include Turbo::Frames::FrameRequest
+
+    include Turbo::Native::Navigation
+
+    include Turbo::Broadcastable
+
+    include Turbo::TestAssertions
+
+    # Support `as: :turbo_stream`. Public `register_encoder` API is a little too strict.
+    class ActionDispatch::RequestEncoder
+      class TurboStreamEncoder < IdentityEncoder
+      end
+    end
+  end
+end

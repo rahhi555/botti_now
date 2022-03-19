@@ -1,0 +1,47 @@
+# Provides the broadcast actions in synchronous and asynchrous form for the <tt>Turbo::StreamsChannel</tt>.
+# See <tt>Turbo::Broadcastable</tt> for the user-facing API that invokes these methods with most of the paperwork filled out already.
+#
+# Can be used directly using something like <tt>Turbo::StreamsChannel.broadcast_remove_to :entries, target: 1</tt>.
+module Turbo::Streams::Broadcasts
+  include Turbo::Streams::ActionHelper
+
+  def broadcast_remove_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_replace_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_update_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_before_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_after_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_append_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_prepend_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_action_to: (*untyped streamables, action: untyped action, ?target: untyped? target, ?targets: untyped? targets, **untyped rendering) -> untyped
+
+  def broadcast_replace_later_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_update_later_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_before_later_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_after_later_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_append_later_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_prepend_later_to: (*untyped streamables, **untyped opts) -> untyped
+
+  def broadcast_action_later_to: (*untyped streamables, action: untyped action, ?target: untyped? target, ?targets: untyped? targets, **untyped rendering) -> untyped
+
+  def broadcast_render_to: (*untyped streamables, **untyped rendering) -> untyped
+
+  def broadcast_render_later_to: (*untyped streamables, **untyped rendering) -> untyped
+
+  def broadcast_stream_to: (*untyped streamables, content: untyped content) -> untyped
+
+  private
+
+  def render_format: (untyped format, **untyped rendering) -> untyped
+end

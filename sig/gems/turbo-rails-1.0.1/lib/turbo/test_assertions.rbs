@@ -1,0 +1,9 @@
+module Turbo
+  module TestAssertions
+    extend ActiveSupport::Concern
+
+    def assert_turbo_stream: (action: untyped action, ?target: untyped? target, ?status: ::Symbol status) { () -> untyped } -> untyped
+
+    def assert_no_turbo_stream: (action: untyped action, ?target: untyped? target) -> untyped
+  end
+end

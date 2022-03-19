@@ -1,0 +1,26 @@
+# Turbo is built to work with native navigation principles and present those alongside what's required for the web. When you
+# have Turbo Native clients running (see the Turbo iOS and Turbo Android projects for details), you can respond to native
+# requests with three dedicated responses: <tt>recede</tt>, <tt>resume</tt>, <tt>refresh</tt>.
+#
+# FIXME: Supply full description of when we use either.
+module Turbo::Native::Navigation
+  private
+
+  def recede_or_redirect_to: (untyped url, **untyped options) -> untyped
+
+  def resume_or_redirect_to: (untyped url, **untyped options) -> untyped
+
+  def refresh_or_redirect_to: (untyped url, **untyped options) -> untyped
+
+  def recede_or_redirect_back_or_to: (untyped url, **untyped options) -> untyped
+
+  def resume_or_redirect_back_or_to: (untyped url, **untyped options) -> untyped
+
+  def refresh_or_redirect_back_or_to: (untyped url, **untyped options) -> untyped
+
+  # :nodoc:
+  def turbo_native_action_or_redirect: (untyped url, untyped action, untyped redirect_type, ?::Hash[untyped, untyped] options) -> untyped
+
+  # Turbo Native applications are identified by having the string "Turbo Native" as part of their user agent.
+  def turbo_native_app?: () -> untyped
+end
