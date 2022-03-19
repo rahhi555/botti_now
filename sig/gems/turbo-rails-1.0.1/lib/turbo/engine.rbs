@@ -18,10 +18,12 @@ module Turbo
 
     include Turbo::TestAssertions
 
-    # Support `as: :turbo_stream`. Public `register_encoder` API is a little too strict.
-    class ActionDispatch::RequestEncoder
-      class TurboStreamEncoder < IdentityEncoder
-      end
-    end
+    # # Support `as: :turbo_stream`. Public `register_encoder` API is a little too strict.
+    # class ActionDispatch::RequestEncoder
+    #   class IdentityEncoder
+    #   end
+    #   class TurboStreamEncoder < IdentityEncoder
+    #   end
+    # end
   end
 end

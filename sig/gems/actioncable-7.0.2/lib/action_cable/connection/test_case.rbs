@@ -15,11 +15,11 @@ module ActionCable
     # We don't want to use the whole "encryption stack" for connection
     # unit-tests, but we want to make sure that users test against the correct types
     # of cookies (i.e. signed or encrypted or plain)
-    class TestCookieJar < ActiveSupport::HashWithIndifferentAccess
-      def signed: () -> untyped
+    # class TestCookieJar < ActiveSupport::HashWithIndifferentAccess
+    #   def signed: () -> untyped
 
-      def encrypted: () -> untyped
-    end
+    #   def encrypted: () -> untyped
+    # end
 
     class TestRequest < ActionDispatch::TestRequest
       attr_accessor session: untyped

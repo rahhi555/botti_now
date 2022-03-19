@@ -1,0 +1,10 @@
+module ApplicationHelper
+  # @return [User]
+  def current_user: () -> untyped
+
+  # @return [Integer]
+  # 現在のコネクション数から自分を除いた数を返す
+  # コネクション接続のタイミング上、初回の接続は自分を含めることができず-1になってしまう可能性があるため、
+  # 計算結果がマイナスなら0を返す処理を入れている。
+  def current_connection_length: () -> untyped
+end

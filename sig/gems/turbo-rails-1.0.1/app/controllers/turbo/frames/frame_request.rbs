@@ -9,6 +9,8 @@
 # Turbo Frames knows how to fish out the relevant frame regardless.
 #
 # This module is automatically included in <tt>ActionController::Base</tt>.
+module Turbo::Frames
+end
 module Turbo::Frames::FrameRequest
   extend ActiveSupport::Concern
 

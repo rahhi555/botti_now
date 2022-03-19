@@ -1,0 +1,12 @@
+class ApplicationController < ActionController::Base
+  include ApplicationHelper
+
+  include FlashHelper
+
+  def have_current_user: () -> untyped
+
+  def turbo_stream_flash: () -> untyped
+
+  # @param [ActiveRecord]
+  def turbo_stream_error_messages: (untyped object) -> untyped
+end
