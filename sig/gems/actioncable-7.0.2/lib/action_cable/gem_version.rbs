@@ -1,0 +1,16 @@
+module ActionCable
+  # Returns the version of the currently loaded Action Cable as a <tt>Gem::Version</tt>.
+  def self.gem_version: () -> untyped
+
+  module VERSION
+    MAJOR: ::Integer
+
+    MINOR: ::Integer
+
+    TINY: ::Integer
+
+    PRE: untyped?
+
+    STRING: untyped
+  end
+end

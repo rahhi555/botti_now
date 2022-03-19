@@ -1,0 +1,18 @@
+module ActionCable
+  module Connection
+    # Makes it possible for the RemoteConnection to disconnect a specific connection.
+    module InternalChannel
+      extend ActiveSupport::Concern
+
+      private
+
+      def internal_channel: () -> ::String
+
+      def subscribe_to_internal_channel: () -> untyped
+
+      def unsubscribe_from_internal_channel: () -> untyped
+
+      def process_internal_message: (untyped message) -> untyped
+    end
+  end
+end

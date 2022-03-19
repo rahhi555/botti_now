@@ -1,0 +1,21 @@
+module ActionCable
+  module SubscriptionAdapter
+    class Base
+      attr_reader logger: untyped
+
+      attr_reader server: untyped
+
+      def initialize: (untyped server) -> void
+
+      def broadcast: (untyped channel, untyped payload) -> untyped
+
+      def subscribe: (untyped channel, untyped message_callback, ?untyped? success_callback) -> untyped
+
+      def unsubscribe: (untyped channel, untyped message_callback) -> untyped
+
+      def shutdown: () -> untyped
+
+      def identifier: () -> untyped
+    end
+  end
+end

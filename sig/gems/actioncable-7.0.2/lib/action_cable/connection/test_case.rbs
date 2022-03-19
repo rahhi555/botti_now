@@ -1,0 +1,151 @@
+module ActionCable
+  module Connection
+    class NonInferrableConnectionError < ::StandardError
+      def initialize: (untyped name) -> void
+    end
+
+    module Assertions
+      # Asserts that the connection is rejected (via +reject_unauthorized_connection+).
+      #
+      #   # Asserts that connection without user_id fails
+      #   assert_reject_connection { connect params: { user_id: '' } }
+      def assert_reject_connection: () { () -> untyped } -> untyped
+    end
+
+    # We don't want to use the whole "encryption stack" for connection
+    # unit-tests, but we want to make sure that users test against the correct types
+    # of cookies (i.e. signed or encrypted or plain)
+    class TestCookieJar < ActiveSupport::HashWithIndifferentAccess
+      def signed: () -> untyped
+
+      def encrypted: () -> untyped
+    end
+
+    class TestRequest < ActionDispatch::TestRequest
+      attr_accessor session: untyped
+
+      attr_accessor cookie_jar: untyped
+    end
+
+    module TestConnection
+      attr_reader logger: untyped
+
+      attr_reader request: untyped
+
+      def initialize: (untyped request) -> void
+    end
+
+    # Unit test Action Cable connections.
+    #
+    # Useful to check whether a connection's +identified_by+ gets assigned properly
+    # and that any improper connection requests are rejected.
+    #
+    # == Basic example
+    #
+    # Unit tests are written as follows:
+    #
+    # 1. Simulate a connection attempt by calling +connect+.
+    # 2. Assert state, e.g. identifiers, has been assigned.
+    #
+    #
+    #   class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
+    #     def test_connects_with_proper_cookie
+    #       # Simulate the connection request with a cookie.
+    #       cookies["user_id"] = users(:john).id
+    #
+    #       connect
+    #
+    #       # Assert the connection identifier matches the fixture.
+    #       assert_equal users(:john).id, connection.user.id
+    #     end
+    #
+    #     def test_rejects_connection_without_proper_cookie
+    #       assert_reject_connection { connect }
+    #     end
+    #   end
+    #
+    # +connect+ accepts additional information about the HTTP request with the
+    # +params+, +headers+, +session+ and Rack +env+ options.
+    #
+    #   def test_connect_with_headers_and_query_string
+    #     connect params: { user_id: 1 }, headers: { "X-API-TOKEN" => "secret-my" }
+    #
+    #     assert_equal "1", connection.user.id
+    #     assert_equal "secret-my", connection.token
+    #   end
+    #
+    #   def test_connect_with_params
+    #     connect params: { user_id: 1 }
+    #
+    #     assert_equal "1", connection.user.id
+    #   end
+    #
+    # You can also set up the correct cookies before the connection request:
+    #
+    #   def test_connect_with_cookies
+    #     # Plain cookies:
+    #     cookies["user_id"] = 1
+    #
+    #     # Or signed/encrypted:
+    #     # cookies.signed["user_id"] = 1
+    #     # cookies.encrypted["user_id"] = 1
+    #
+    #     connect
+    #
+    #     assert_equal "1", connection.user_id
+    #   end
+    #
+    # == Connection is automatically inferred
+    #
+    # ActionCable::Connection::TestCase will automatically infer the connection under test
+    # from the test class name. If the channel cannot be inferred from the test
+    # class name, you can explicitly set it with +tests+.
+    #
+    #   class ConnectionTest < ActionCable::Connection::TestCase
+    #     tests ApplicationCable::Connection
+    #   end
+    #
+    class TestCase < ActiveSupport::TestCase
+      module Behavior
+        extend ActiveSupport::Concern
+
+        DEFAULT_PATH: ::String
+
+        include ActiveSupport::Testing::ConstantLookup
+
+        include Assertions
+
+        attr_reader connection: untyped
+
+        module ClassMethods
+          def tests: (untyped connection) -> untyped
+
+          def connection_class: () -> untyped
+
+          def determine_default_connection: (untyped name) -> untyped
+        end
+
+        # Performs connection attempt to exert #connect on the connection under test.
+        #
+        # Accepts request path as the first argument and the following request options:
+        #
+        # - params – URL parameters (Hash)
+        # - headers – request headers (Hash)
+        # - session – session data (Hash)
+        # - env – additional Rack env configuration (Hash)
+        def connect: (?untyped path, **untyped request_params) -> untyped
+
+        # Exert #disconnect on the connection under test.
+        def disconnect: () -> untyped
+
+        def cookies: () -> untyped
+
+        private
+
+        def build_test_request: (untyped path, ?params: untyped? params, ?headers: ::Hash[untyped, untyped] headers, ?session: ::Hash[untyped, untyped] session, ?env: ::Hash[untyped, untyped] env) -> untyped
+      end
+
+      include Behavior
+    end
+  end
+end

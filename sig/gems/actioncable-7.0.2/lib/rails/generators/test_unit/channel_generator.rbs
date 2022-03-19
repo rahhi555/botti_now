@@ -1,0 +1,11 @@
+module TestUnit
+  module Generators
+    class ChannelGenerator < ::Rails::Generators::NamedBase
+      def create_test_files: () -> untyped
+
+      private
+
+      def file_name: () -> untyped
+    end
+  end
+end

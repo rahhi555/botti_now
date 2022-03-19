@@ -1,0 +1,130 @@
+module ActionCable
+  module Connection
+    # For every WebSocket connection the Action Cable server accepts, a Connection object will be instantiated. This instance becomes the parent
+    # of all of the channel subscriptions that are created from there on. Incoming messages are then routed to these channel subscriptions
+    # based on an identifier sent by the Action Cable consumer. The Connection itself does not deal with any specific application logic beyond
+    # authentication and authorization.
+    #
+    # Here's a basic example:
+    #
+    #   module ApplicationCable
+    #     class Connection < ActionCable::Connection::Base
+    #       identified_by :current_user
+    #
+    #       def connect
+    #         self.current_user = find_verified_user
+    #         logger.add_tags current_user.name
+    #       end
+    #
+    #       def disconnect
+    #         # Any cleanup work needed when the cable connection is cut.
+    #       end
+    #
+    #       private
+    #         def find_verified_user
+    #           User.find_by_identity(cookies.encrypted[:identity_id]) ||
+    #             reject_unauthorized_connection
+    #         end
+    #     end
+    #   end
+    #
+    # First, we declare that this connection can be identified by its current_user. This allows us to later be able to find all connections
+    # established for that current_user (and potentially disconnect them). You can declare as many
+    # identification indexes as you like. Declaring an identification means that an attr_accessor is automatically set for that key.
+    #
+    # Second, we rely on the fact that the WebSocket connection is established with the cookies from the domain being sent along. This makes
+    # it easy to use signed cookies that were set when logging in via a web interface to authorize the WebSocket connection.
+    #
+    # Finally, we add a tag to the connection-specific logger with the name of the current user to easily distinguish their messages in the log.
+    #
+    # Pretty simple, eh?
+    class Base
+      include Identification
+
+      include InternalChannel
+
+      include Authorization
+
+      include ActiveSupport::Rescuable
+
+      attr_reader server: untyped
+
+      attr_reader env: untyped
+
+      attr_reader subscriptions: untyped
+
+      attr_reader logger: untyped
+
+      attr_reader worker_pool: untyped
+
+      attr_reader protocol: untyped
+
+      def initialize: (untyped server, untyped env, ?coder: untyped coder) -> void
+
+      def process: () -> untyped
+
+      def receive: (untyped websocket_message) -> untyped
+
+      def dispatch_websocket_message: (untyped websocket_message) -> untyped
+
+      def transmit: (untyped cable_message) -> untyped
+
+      # Close the WebSocket connection.
+      def close: (?reason: untyped? reason, ?reconnect: bool reconnect) -> untyped
+
+      # Invoke a method on the connection asynchronously through the pool of thread workers.
+      def send_async: (untyped method, *untyped arguments) -> untyped
+
+      # Return a basic hash of statistics for the connection keyed with <tt>identifier</tt>, <tt>started_at</tt>, <tt>subscriptions</tt>, and <tt>request_id</tt>.
+      # This can be returned by a health check against the connection.
+      def statistics: () -> { identifier: untyped, started_at: untyped, subscriptions: untyped, request_id: untyped }
+
+      def beat: () -> untyped
+
+      def on_open: () -> untyped
+
+      def on_message: (untyped message) -> untyped
+
+      def on_error: (untyped message) -> untyped
+
+      def on_close: (untyped reason, untyped code) -> untyped
+
+      private
+
+      attr_reader websocket: untyped
+
+      attr_reader message_buffer: untyped
+
+      def request: () -> untyped
+
+      def cookies: () -> untyped
+
+      def encode: (untyped cable_message) -> untyped
+
+      def decode: (untyped websocket_message) -> untyped
+
+      def handle_open: () -> untyped
+
+      def handle_close: () -> untyped
+
+      def send_welcome_message: () -> untyped
+
+      def allow_request_origin?: () -> (::TrueClass | untyped)
+
+      def respond_to_successful_request: () -> untyped
+
+      def respond_to_invalid_request: () -> ::Array[404 | ::Hash[::String, "text/plain"] | ::Array["Page not found"]]
+
+      # Tags are declared in the server but computed in the connection. This allows us per-connection tailored tags.
+      def new_tagged_logger: () -> untyped
+
+      def started_request_message: () -> untyped
+
+      def finished_request_message: () -> untyped
+
+      def invalid_request_message: () -> untyped
+
+      def successful_request_message: () -> untyped
+    end
+  end
+end

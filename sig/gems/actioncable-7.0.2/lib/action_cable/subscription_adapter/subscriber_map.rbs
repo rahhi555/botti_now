@@ -1,0 +1,19 @@
+module ActionCable
+  module SubscriptionAdapter
+    class SubscriberMap
+      def initialize: () -> void
+
+      def add_subscriber: (untyped channel, untyped subscriber, untyped on_success) -> untyped
+
+      def remove_subscriber: (untyped channel, untyped subscriber) -> untyped
+
+      def broadcast: (untyped channel, untyped message) -> (nil | untyped)
+
+      def add_channel: (untyped channel, untyped on_success) -> untyped
+
+      def remove_channel: (untyped channel) -> nil
+
+      def invoke_callback: (untyped callback, untyped message) -> untyped
+    end
+  end
+end

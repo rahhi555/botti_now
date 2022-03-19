@@ -1,0 +1,44 @@
+module ActionCable
+  module SubscriptionAdapter
+    class PostgreSQL < Base
+      # :nodoc:
+      prepend ChannelPrefix
+
+      def initialize: () -> void
+
+      def broadcast: (untyped channel, untyped payload) -> untyped
+
+      def subscribe: (untyped channel, untyped callback, ?untyped? success_callback) -> untyped
+
+      def unsubscribe: (untyped channel, untyped callback) -> untyped
+
+      def shutdown: () -> untyped
+
+      def with_subscriptions_connection: () { (untyped) -> untyped } -> untyped
+
+      def with_broadcast_connection: () { (untyped) -> untyped } -> untyped
+
+      private
+
+      def channel_identifier: (untyped channel) -> untyped
+
+      def listener: () -> untyped
+
+      def verify!: (untyped pg_conn) -> untyped
+
+      class Listener < SubscriberMap
+        def initialize: (untyped adapter, untyped event_loop) -> void
+
+        def listen: () -> untyped
+
+        def shutdown: () -> untyped
+
+        def add_channel: (untyped channel, untyped on_success) -> untyped
+
+        def remove_channel: (untyped channel) -> untyped
+
+        def invoke_callback: () -> untyped
+      end
+    end
+  end
+end

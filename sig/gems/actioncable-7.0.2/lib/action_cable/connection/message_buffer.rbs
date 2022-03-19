@@ -1,0 +1,29 @@
+module ActionCable
+  module Connection
+    class MessageBuffer
+      # Allows us to buffer messages received from the WebSocket before the Connection has been fully initialized, and is ready to receive them.
+      # :nodoc:
+      def initialize: (untyped connection) -> void
+
+      def append: (untyped message) -> untyped
+
+      def processing?: () -> untyped
+
+      def process!: () -> untyped
+
+      private
+
+      attr_reader connection: untyped
+
+      attr_reader buffered_messages: untyped
+
+      def valid?: (untyped message) -> untyped
+
+      def receive: (untyped message) -> untyped
+
+      def buffer: (untyped message) -> untyped
+
+      def receive_buffered_messages: () -> untyped
+    end
+  end
+end

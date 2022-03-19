@@ -1,0 +1,27 @@
+module ActionCable
+  module Connection
+    class StreamEventLoop
+      def initialize: () -> void
+
+      def timer: (untyped interval) { () -> untyped } -> untyped
+
+      def post: (?untyped? task) { () -> untyped } -> untyped
+
+      def attach: (untyped io, untyped stream) -> untyped
+
+      def detach: (untyped io, untyped stream) -> untyped
+
+      def writes_pending: (untyped io) -> untyped
+
+      def stop: () -> untyped
+
+      private
+
+      def spawn: () -> (nil | ::TrueClass | untyped)
+
+      def wakeup: () -> untyped
+
+      def run: () -> untyped
+    end
+  end
+end

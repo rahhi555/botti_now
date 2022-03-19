@@ -1,0 +1,33 @@
+module ActionCable
+  module Server
+    class Worker
+      # Worker used by Server.send_async to do connection work in threads.
+      # :nodoc:
+      include ActiveSupport::Callbacks
+
+      include ActiveRecordConnectionManagement
+
+      attr_reader executor: untyped
+
+      def initialize: (?max_size: ::Integer max_size) -> void
+
+      # Stop processing work: any work that has not already started
+      # running will be discarded from the queue
+      def halt: () -> untyped
+
+      def stopping?: () -> untyped
+
+      def work: (untyped connection) { () -> untyped } -> untyped
+
+      def async_exec: (untyped receiver, *untyped args, connection: untyped connection) { () -> untyped } -> untyped
+
+      def async_invoke: (untyped receiver, untyped method, *untyped args, ?connection: untyped connection) { () -> untyped } -> untyped
+
+      def invoke: (untyped receiver, untyped method, *untyped args, connection: untyped connection) { () -> untyped } -> untyped
+
+      private
+
+      def logger: () -> untyped
+    end
+  end
+end

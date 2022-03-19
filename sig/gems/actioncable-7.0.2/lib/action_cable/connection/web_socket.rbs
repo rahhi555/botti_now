@@ -1,0 +1,25 @@
+module ActionCable
+  module Connection
+    class WebSocket
+      # Wrap the real socket to minimize the externally-presented API
+      # :nodoc:
+      def initialize: (untyped env, untyped event_target, untyped event_loop, ?protocols: untyped protocols) -> void
+
+      def possible?: () -> untyped
+
+      def alive?: () -> untyped
+
+      def transmit: (untyped data) -> untyped
+
+      def close: () -> untyped
+
+      def protocol: () -> untyped
+
+      def rack_response: () -> untyped
+
+      private
+
+      attr_reader websocket: untyped
+    end
+  end
+end

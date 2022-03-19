@@ -1,0 +1,22 @@
+module ActionCable
+  module SubscriptionAdapter
+    class Inline < Base
+      # :nodoc:
+      def initialize: () -> void
+
+      def broadcast: (untyped channel, untyped payload) -> untyped
+
+      def subscribe: (untyped channel, untyped callback, ?untyped? success_callback) -> untyped
+
+      def unsubscribe: (untyped channel, untyped callback) -> untyped
+
+      def shutdown: () -> nil
+
+      private
+
+      def subscriber_map: () -> untyped
+
+      def new_subscriber_map: () -> untyped
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module ActionCable
+  module SubscriptionAdapter
+    module ChannelPrefix
+      # :nodoc:
+      def broadcast: (untyped channel, untyped payload) -> untyped
+
+      def subscribe: (untyped channel, untyped callback, ?untyped? success_callback) -> untyped
+
+      def unsubscribe: (untyped channel, untyped callback) -> untyped
+
+      private
+
+      # Returns the channel name, including channel_prefix specified in cable.yml
+      def channel_with_prefix: (untyped channel) -> untyped
+    end
+  end
+end

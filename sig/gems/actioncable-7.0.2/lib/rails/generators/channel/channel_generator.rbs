@@ -1,0 +1,37 @@
+module Rails
+  module Generators
+    class ChannelGenerator < NamedBase
+      def create_channel_files: () -> untyped
+
+      private
+
+      def create_shared_channel_files: () -> (nil | untyped)
+
+      def create_channel_file: () -> untyped
+
+      def create_shared_channel_javascript_files: () -> untyped
+
+      def create_channel_javascript_file: () -> untyped
+
+      def import_channels_in_javascript_entrypoint: () -> untyped
+
+      def import_channel_in_javascript_entrypoint: () -> untyped
+
+      def install_javascript_dependencies: () -> untyped
+
+      def pin_javascript_dependencies: () -> untyped
+
+      def file_name: () -> untyped
+
+      def first_setup_required?: () -> untyped
+
+      def using_javascript?: () -> untyped
+
+      def using_node?: () -> untyped
+
+      def using_importmap?: () -> untyped
+
+      def root: () -> untyped
+    end
+  end
+end

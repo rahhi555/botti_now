@@ -1,0 +1,58 @@
+module ActionCable
+  module Connection
+    class ClientSocket
+      # -
+      # This class is heavily based on faye-websocket-ruby
+      #
+      # Copyright (c) 2010-2015 James Coglan
+      # :nodoc:
+      def self.determine_url: (untyped env) -> ::String
+
+      def self.secure_request?: (untyped env) -> (::TrueClass | ::FalseClass)
+
+      CONNECTING: ::Integer
+
+      OPEN: ::Integer
+
+      CLOSING: ::Integer
+
+      CLOSED: ::Integer
+
+      attr_reader env: untyped
+
+      attr_reader url: untyped
+
+      def initialize: (untyped env, untyped event_target, untyped event_loop, untyped protocols) -> void
+
+      def start_driver: () -> (nil | untyped)
+
+      def rack_response: () -> ::Array[-1 | ::Hash[untyped, untyped] | ::Array[untyped]]
+
+      def write: (untyped data) -> untyped
+
+      def transmit: (untyped message) -> (::FalseClass | untyped)
+
+      def close: (?untyped? code, ?untyped? reason) -> untyped
+
+      def parse: (untyped data) -> untyped
+
+      def client_gone: () -> untyped
+
+      def alive?: () -> untyped
+
+      def protocol: () -> untyped
+
+      private
+
+      def open: () -> (nil | untyped)
+
+      def receive_message: (untyped data) -> (nil | untyped)
+
+      def emit_error: (untyped message) -> (nil | untyped)
+
+      def begin_close: (untyped reason, untyped code) -> (nil | untyped)
+
+      def finalize_close: () -> (nil | untyped)
+    end
+  end
+end

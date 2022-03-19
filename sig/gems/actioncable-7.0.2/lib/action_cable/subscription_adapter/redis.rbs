@@ -1,0 +1,50 @@
+module ActionCable
+  module SubscriptionAdapter
+    class Redis < Base
+      # :nodoc:
+      prepend ChannelPrefix
+
+      def initialize: () -> void
+
+      def broadcast: (untyped channel, untyped payload) -> untyped
+
+      def subscribe: (untyped channel, untyped callback, ?untyped? success_callback) -> untyped
+
+      def unsubscribe: (untyped channel, untyped callback) -> untyped
+
+      def shutdown: () -> untyped
+
+      def redis_connection_for_subscriptions: () -> untyped
+
+      private
+
+      def listener: () -> untyped
+
+      def redis_connection_for_broadcasts: () -> untyped
+
+      def redis_connection: () -> untyped
+
+      class Listener < SubscriberMap
+        def initialize: (untyped adapter, untyped event_loop) -> void
+
+        def listen: (untyped conn) -> untyped
+
+        def shutdown: () -> (nil | untyped)
+
+        def add_channel: (untyped channel, untyped on_success) -> untyped
+
+        def remove_channel: (untyped channel) -> untyped
+
+        def invoke_callback: () -> untyped
+
+        private
+
+        def ensure_listener_running: () -> untyped
+
+        def when_connected: () { () -> untyped } -> untyped
+
+        def send_command: (*untyped command) -> untyped
+      end
+    end
+  end
+end

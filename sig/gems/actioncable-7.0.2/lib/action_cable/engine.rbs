@@ -1,0 +1,5 @@
+module ActionCable
+  class Engine < Rails::Engine
+    include ActionCable::Helpers::ActionCableHelper
+  end
+end

@@ -1,0 +1,30 @@
+module ActionCable
+  module Connection
+    class Stream
+      # -
+      # This class is heavily based on faye-websocket-ruby
+      #
+      # Copyright (c) 2010-2015 James Coglan
+      # :nodoc:
+      def initialize: (untyped event_loop, untyped socket) -> void
+
+      def each: () { () -> untyped } -> untyped
+
+      def close: () -> untyped
+
+      def shutdown: () -> untyped
+
+      def write: (untyped data) -> untyped
+
+      def flush_write_buffer: () -> untyped
+
+      def receive: (untyped data) -> untyped
+
+      def hijack_rack_socket: () -> (nil | untyped)
+
+      private
+
+      def clean_rack_hijack: () -> (nil | untyped)
+    end
+  end
+end

@@ -1,0 +1,17 @@
+module ActionCable
+  module SubscriptionAdapter
+    class Async < Inline
+      private
+
+      def new_subscriber_map: () -> untyped
+
+      class AsyncSubscriberMap < SubscriberMap
+        def initialize: (untyped event_loop) -> void
+
+        def add_subscriber: () -> untyped
+
+        def invoke_callback: () -> untyped
+      end
+    end
+  end
+end

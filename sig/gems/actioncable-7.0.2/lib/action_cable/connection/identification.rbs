@@ -1,0 +1,23 @@
+module ActionCable
+  module Connection
+    module Identification
+      extend ActiveSupport::Concern
+
+      module ClassMethods
+        # Mark a key as being a connection identifier index that can then be used to find the specific connection again later.
+        # Common identifiers are current_user and current_account, but could be anything, really.
+        #
+        # Note that anything marked as an identifier will automatically create a delegate by the same name on any
+        # channel instances created off the connection.
+        def identified_by: (*untyped identifiers) -> untyped
+      end
+
+      # Return a single connection identifier that combines the value of all the registered identifiers into a single gid.
+      def connection_identifier: () -> untyped
+
+      private
+
+      def connection_gid: (untyped ids) -> untyped
+    end
+  end
+end

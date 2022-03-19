@@ -1,0 +1,5 @@
+module ActionCable
+  class TestCase < ActiveSupport::TestCase
+    include ActionCable::TestHelper
+  end
+end
