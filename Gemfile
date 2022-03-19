@@ -36,6 +36,7 @@ end
 group :development do
   gem 'web-console'
   gem 'slim_lint'
+  gem 'steep'
 end
 
 group :test do
